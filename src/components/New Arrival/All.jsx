@@ -1,5 +1,5 @@
 import React from "react";
-import ArrivalCards from "./arrivalCards";
+import ArrivalCards from "./ArrivalCards";
 import { v4 as uuidv4 } from "uuid";
 
 const All = () => {
