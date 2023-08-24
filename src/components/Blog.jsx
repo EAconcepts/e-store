@@ -3,40 +3,41 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import Navbar from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 const Blog = () => {
   const blogArticles = [
     {
       id: uuidv4(),
       image:
-        "https://media.istockphoto.com/id/1282101313/photo/confident-manager-suitable-in-current-circumstances-masculinity-concept-daily-outfit-man.jpg?s=612x612&w=0&k=20&c=8LaZ9QcnBN5wGa5TfFaE-4ZDFaAjrHdXoraMU6x1BrM=",
+        "https://nextluxury.com/wp-content/uploads/trendy-spring-fashion-style.jpg",
 
       title: "2021 STYLE GUIDE: THE BIGGEST FALL TRENDS",
     },
     {
       id: uuidv4(),
       image:
-        "https://media.istockphoto.com/id/1282101313/photo/confident-manager-suitable-in-current-circumstances-masculinity-concept-daily-outfit-man.jpg?s=612x612&w=0&k=20&c=8LaZ9QcnBN5wGa5TfFaE-4ZDFaAjrHdXoraMU6x1BrM=",
+        "https://nextluxury.com/wp-content/uploads/trendy-spring-fashion-style.jpg",
 
       title: "2021 STYLE GUIDE: THE BIGGEST FALL TRENDS",
     },
     {
       id: uuidv4(),
       image:
-        "https://media.istockphoto.com/id/1282101313/photo/confident-manager-suitable-in-current-circumstances-masculinity-concept-daily-outfit-man.jpg?s=612x612&w=0&k=20&c=8LaZ9QcnBN5wGa5TfFaE-4ZDFaAjrHdXoraMU6x1BrM=",
+        "https://nextluxury.com/wp-content/uploads/trendy-spring-fashion-style.jpg",
 
       title: "2021 STYLE GUIDE: THE BIGGEST FALL TRENDS",
     },
     {
       id: uuidv4(),
       image:
-        "https://media.istockphoto.com/id/1282101313/photo/confident-manager-suitable-in-current-circumstances-masculinity-concept-daily-outfit-man.jpg?s=612x612&w=0&k=20&c=8LaZ9QcnBN5wGa5TfFaE-4ZDFaAjrHdXoraMU6x1BrM=",
+        "https://nextluxury.com/wp-content/uploads/trendy-spring-fashion-style.jpg",
 
       title: "2021 STYLE GUIDE: THE BIGGEST FALL TRENDS",
     },
     {
       id: uuidv4(),
       image:
-        "https://media.istockphoto.com/id/1282101313/photo/confident-manager-suitable-in-current-circumstances-masculinity-concept-daily-outfit-man.jpg?s=612x612&w=0&k=20&c=8LaZ9QcnBN5wGa5TfFaE-4ZDFaAjrHdXoraMU6x1BrM=",
+        "https://nextluxury.com/wp-content/uploads/trendy-spring-fashion-style.jpg",
 
       title: "2021 STYLE GUIDE: THE BIGGEST FALL TRENDS",
     },
@@ -53,10 +54,12 @@ const Blog = () => {
       </div>
       <div className="flex flex-col items-center gap-y-8 mt-8">
         {blogArticles.map((article) => (
-          <div className=" h- w-[90%] flex flex-col justify-between">
+          <div
+            key={article.id}
+            className=" h- w-[90%] flex flex-col justify-between"
+          >
             <div
-              key={article.id}
-              className={`h-64 w-full bg-[url('${article.image}')] text-slate-100 h-48 w-full flex flex-col justify-between`}
+              className={`h-64 w-full bg-[url("${article.image}")] bg-cover text-slate-100 w-full flex flex-col justify-between`}
             >
               <div className="flex justify-end p-3 text-lg">
                 <FontAwesomeIcon icon={faBookmark} />
@@ -76,8 +79,10 @@ const Blog = () => {
         ))}
       </div>
       <div className="flex flex-row w-full justify-center">
-        <button className="uppercase border "><span>Load More</span>
-        <FontAwesomeIcon icon={faPlus}/></button>
+        <button className="uppercase border ">
+          <span>Load More</span>
+          <FontAwesomeIcon icon={faPlus} />
+        </button>
       </div>
     </div>
   );
