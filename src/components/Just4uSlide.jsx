@@ -1,15 +1,17 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Slider from "react-slick";
 import { v4 as uuidv4 } from "uuid";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css/pagination";
+
 
 const Just4uSlide = () => {
   const forYouArray = [
     {
       id: uuidv4(),
       imgUrl:
-        "https://i0.wp.com/exquisitemag.com/wp-content/uploads/2023/04/ank.jpg",
+        "https://www.designscene.net/wp-content/uploads/2021/09/Versace-Spring-Summer-2022-photo-courtesy-%C2%A9VERSACE-41.jpg",
       title: "Ankara",
       price: "$120",
     },
@@ -23,7 +25,7 @@ const Just4uSlide = () => {
     {
       id: uuidv4(),
       imgUrl:
-        "https://i0.wp.com/exquisitemag.com/wp-content/uploads/2023/04/ank.jpg",
+        "https://www.designscene.net/wp-content/uploads/2021/09/Versace-Spring-Summer-2022-photo-courtesy-%C2%A9VERSACE-41.jpg",
       title: "Ankara",
       price: "$120",
     },
@@ -37,7 +39,7 @@ const Just4uSlide = () => {
     {
       id: uuidv4(),
       imgUrl:
-        "https://i0.wp.com/exquisitemag.com/wp-content/uploads/2023/04/ank.jpg",
+        "https://www.designscene.net/wp-content/uploads/2021/09/Versace-Spring-Summer-2022-photo-courtesy-%C2%A9VERSACE-41.jpg",
       title: "Ankara",
       price: "$120",
     },
@@ -66,22 +68,27 @@ const Just4uSlide = () => {
     },
   };
   return (
-    <div className="w-full">
+    <div className="w-full mt-10">
       <h1>JUST FOR YOU</h1>
       <Swiper
-        className=" w-full h-full"
-        spaceBetween={50}
-        slidesPerView={1}
+        className=" w-full h-full  "
+        spaceBetween={30}
+        slidesPerView={"auto"}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
+        modules={[Autoplay, Pagination]}
+        pagination={{
+          clickable: true,
+            dynamicBullets: true,
+        }}
       >
         {forYouArray &&
           forYouArray.map((obj) => (
-            <SwiperSlide key={obj.id}>
+            <SwiperSlide key={obj.id} className="w-full ">
               <img
                 src={obj.imgUrl}
                 alt={obj.title}
-                className="w-full object-cover h-36"
+                className="w-full object-cover object-top h-40"
               />
               <p className="text-sm">{obj.title}</p>
               <p className="text-[#dd8560]">{obj.price}</p>

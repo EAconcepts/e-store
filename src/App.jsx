@@ -5,6 +5,8 @@ import Bag from "./components/New Arrival/Bag";
 import Tshirt from "./components/New Arrival/Tshirt";
 import Apparel from "./components/New Arrival/Apparel";
 import Home from "./components/Home";
+import Blog from "./components/Blog";
+import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
         element: <Apparel />,
       },
     ],
+  },
+  {
+    path: "/blog",
+    element: <Blog />,
   },
 ]);
 

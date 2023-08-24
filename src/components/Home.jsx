@@ -133,7 +133,7 @@ const Home = () => {
           <h2 className="uppercase">Tiffany & Co.</h2>
         </div>
       </section>
-      <section className="flex flex-col items-center">
+      <section className="w-full flex flex-col items-center">
         <h2 className="font-medium text-lg tracking-wider text-center mt-16">
           {" "}
           COLLECTIONS
@@ -153,8 +153,21 @@ const Home = () => {
           {/* <source src="https://youtu.be/NvtxFFj6eDY" type="video/mp4"> */}
           Your browser does not support the video tag.
         </video>
-        <div className="flex flex-col items-center ">
-            <Just4uSlide/>
+        <div className="flex flex-col items-center w-full">
+          <Just4uSlide />
+        </div>
+        <div className="w-full flex flex-col">
+          <div className="w-full flex flex-row justify-around text-sm">
+            <span className="bg-slate-100">#2021</span>
+            <span className="bg-slate-100">#spring</span>
+            <span className="bg-slate-100">#collection</span>
+            <span className="bg-slate-100">#fall</span>
+          </div>
+          <div className=" w-full flex flex-row justify-around text-sm">
+            <span className="bg-slate-100">#dress</span>
+            <span className="bg-slate-100">#autumncollection</span>
+            <span className="bg-slate-100">#openfashion</span>
+          </div>
         </div>
       </section>
     </div>
