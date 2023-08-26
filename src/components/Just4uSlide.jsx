@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 
-
 const Just4uSlide = () => {
   const forYouArray = [
     {
@@ -69,7 +68,7 @@ const Just4uSlide = () => {
   };
   return (
     <div className="w-full mt-10">
-      <h1>JUST FOR YOU</h1>
+      <h1 className="px-2">JUST FOR YOU</h1>
       <Swiper
         className=" w-full h-full  "
         spaceBetween={30}
@@ -79,19 +78,21 @@ const Just4uSlide = () => {
         modules={[Autoplay, Pagination]}
         pagination={{
           clickable: true,
-            dynamicBullets: true,
+          dynamicBullets: true,
         }}
       >
         {forYouArray &&
           forYouArray.map((obj) => (
-            <SwiperSlide key={obj.id} className="w-full ">
+            <SwiperSlide key={obj.id} className="w-full mb-6">
               <img
                 src={obj.imgUrl}
                 alt={obj.title}
                 className="w-full object-cover object-top h-40"
               />
-              <p className="text-sm">{obj.title}</p>
-              <p className="text-[#dd8560]">{obj.price}</p>
+              <div className="px-2">
+                <p className="text-sm">{obj.title}</p>
+                <p className="text-[#dd8560]">{obj.price}</p>
+              </div>
             </SwiperSlide>
           ))}
       </Swiper>

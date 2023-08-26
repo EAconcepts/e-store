@@ -21,57 +21,59 @@ const Home = () => {
     },
   };
   return (
-    <div className="h-screen w-full">
-      <Navbar />
-      <section className="h-[95%] w-full flex flex-col">
-        <Swiper
-          className=" w-full h-full"
-          spaceBetween={50}
-          slidesPerView={1}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          <SwiperSlide>
-            <div className="bg-hero-1  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
-              <div className="px-2 font-semibold">
-                <h2>LUXURY FASHION</h2>
-                <h2>& ACCESSORIES</h2>
+    <div>
+      <div className="h-screen w-full">
+        {/* <Navbar /> */}
+        <section className="h-[95%] w-full flex flex-col">
+          <Swiper
+            className=" w-full h-full"
+            spaceBetween={50}
+            slidesPerView={1}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <SwiperSlide>
+              <div className="bg-hero-1  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
+                <div className="px-2 font-semibold">
+                  <h2>LUXURY FASHION</h2>
+                  <h2>& ACCESSORIES</h2>
+                </div>
+                <div className="flex flex-col items-center mb-10 text-white  ">
+                  <button className=" bg-slate-700 bg-opacity-90 w-fit text-lg px-3 rounded-md">
+                    EXPLORE COLLECTIONS
+                  </button>
+                </div>
               </div>
-              <div className="flex flex-col items-center mb-10 text-white  ">
-                <button className=" bg-slate-700 bg-opacity-90 w-fit text-lg px-3 rounded-md">
-                  EXPLORE COLLECTIONS
-                </button>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="bg-hero-2  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
+                <div className="px-2 font-semibold">
+                  <h2>LUXURY FASHION</h2>
+                  <h2>& ACCESSORIES</h2>
+                </div>
+                <div className="flex flex-col items-center mb-10 text-white  ">
+                  <button className=" bg-slate-700 bg-opacity-90 w-fit text-lg px-3 rounded-md">
+                    EXPLORE COLLECTIONS
+                  </button>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-hero-2  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
-              <div className="px-2 font-semibold">
-                <h2>LUXURY FASHION</h2>
-                <h2>& ACCESSORIES</h2>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="bg-hero-3  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
+                <div className="px-2 font-semibold">
+                  <h2>LUXURY FASHION</h2>
+                  <h2>& ACCESSORIES</h2>
+                </div>
+                <div className="flex flex-col items-center mb-10 text-white  ">
+                  <button className=" bg-slate-700 bg-opacity-90 w-fit text-lg px-3 rounded-md">
+                    EXPLORE COLLECTIONS
+                  </button>
+                </div>
               </div>
-              <div className="flex flex-col items-center mb-10 text-white  ">
-                <button className=" bg-slate-700 bg-opacity-90 w-fit text-lg px-3 rounded-md">
-                  EXPLORE COLLECTIONS
-                </button>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-hero-3  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
-              <div className="px-2 font-semibold">
-                <h2>LUXURY FASHION</h2>
-                <h2>& ACCESSORIES</h2>
-              </div>
-              <div className="flex flex-col items-center mb-10 text-white  ">
-                <button className=" bg-slate-700 bg-opacity-90 w-fit text-lg px-3 rounded-md">
-                  EXPLORE COLLECTIONS
-                </button>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </section>
+            </SwiperSlide>
+          </Swiper>
+        </section>
+      </div>
       <section className=" flex flex-col px-1">
         <h2 className=" uppercase text-center font-medium">New Arrival </h2>
         <div className="bg-slate-500"></div>
@@ -150,13 +152,13 @@ const Home = () => {
         />
 
         <video width="320" height="240" controls>
-          {/* <source src="https://youtu.be/NvtxFFj6eDY" type="video/mp4"> */}
+          <source src="https://youtu.be/D671Yge7SAA" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="flex flex-col items-center w-full">
           <Just4uSlide />
         </div>
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col mt-5">
           <div className="w-full flex flex-row justify-around text-sm">
             <span className="bg-slate-100">#2021</span>
             <span className="bg-slate-100">#spring</span>
