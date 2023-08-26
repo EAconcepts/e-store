@@ -151,7 +151,7 @@ const Home = () => {
           className="w-[85%] h-34 mt-8 object-cover"
         />
 
-        <video width="320" height="240" controls>
+        <video width="320" height="240" controls autoPlay>
           <source src="https://youtu.be/D671Yge7SAA" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
