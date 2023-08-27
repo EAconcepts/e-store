@@ -33,7 +33,7 @@ const Home = () => {
             onSwiper={(swiper) => console.log(swiper)}
           >
             <SwiperSlide>
-              <div className="bg-hero-1  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
+              <div className="bg-hero-1 bg-cover h-full w-full bg-center flex flex-col justify-end gap-[40%] text-3xl">
                 <div className="px-2 font-semibold">
                   <h2>LUXURY FASHION</h2>
                   <h2>& ACCESSORIES</h2>
@@ -46,7 +46,7 @@ const Home = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="bg-hero-2  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
+              <div className="bg-hero-2  h-full w-full bg-cover bg-center flex flex-col justify-end gap-[40%] text-3xl">
                 <div className="px-2 font-semibold">
                   <h2>LUXURY FASHION</h2>
                   <h2>& ACCESSORIES</h2>
@@ -59,7 +59,7 @@ const Home = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="bg-hero-3  h-full w-full bg-cover flex flex-col justify-end gap-[40%] text-3xl">
+              <div className="bg-[url('https://media.istockphoto.com/id/1370431940/photo/portrait-of-black-couple-with-shopping-bags-pointing-at-window.webp?b=1&s=170667a&w=0&k=20&c=XG0ZVgbYCvSLHfAWW-fgkOCrvNtP-stT52R4cFTtinw=')]  h-full w-full bg-cover bg-center flex flex-col justify-end gap-[40%] text-3xl">
                 <div className="px-2 font-semibold">
                   <h2>LUXURY FASHION</h2>
                   <h2>& ACCESSORIES</h2>
@@ -75,7 +75,9 @@ const Home = () => {
         </section>
       </div>
       <section className=" flex flex-col px-1 items-center  ">
-        <h2 className=" uppercase text-center font-medium text-2xl tracking-wider mb-2">New Arrival </h2>
+        <h2 className=" uppercase text-center font-medium text-2xl tracking-wider mb-2">
+          New Arrival{" "}
+        </h2>
         <div className="bg-slate-500 w-32 border-b flex flex-row justify-center"></div>
         <div className="flex flex-row w-full justify-around px-5 mt-4 text-slate-400 ">
           <NavLink
@@ -119,7 +121,7 @@ const Home = () => {
             Bag
           </NavLink>
         </div>
-        <div className="w-full">
+        <div className="w-full mt-4">
           <Outlet />
         </div>
       </section>
