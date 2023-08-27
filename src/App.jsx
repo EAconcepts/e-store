@@ -9,6 +9,8 @@ import Blog from "./components/Blog";
 import Navbar from "./components/Navbar";
 import BlogPost from "./components/BlogPost";
 import Footer from "./components/Footer";
+import MenuList from "./components/MenuList";
+import Contact from "./components/Contact";
 
 const router = createBrowserRouter([
   {
@@ -60,7 +62,8 @@ function App() {
             <Route path="tshirt" element={<Tshirt />} />
             <Route path="bag" element={<Bag />} />
           </Route>
-          <Route path="/blog" element={<Blog/>}/>
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -74,10 +74,10 @@ const Home = () => {
           </Swiper>
         </section>
       </div>
-      <section className=" flex flex-col px-1">
-        <h2 className=" uppercase text-center font-medium">New Arrival </h2>
-        <div className="bg-slate-500"></div>
-        <div className="flex flex-row w-full justify-around px-5 text-slate-400 ">
+      <section className=" flex flex-col px-1 items-center  ">
+        <h2 className=" uppercase text-center font-medium text-2xl tracking-wider mb-2">New Arrival </h2>
+        <div className="bg-slate-500 w-32 border-b flex flex-row justify-center"></div>
+        <div className="flex flex-row w-full justify-around px-5 mt-4 text-slate-400 ">
           <NavLink
             to="/all"
             className={({ isActive, isPending }) =>
@@ -119,7 +119,7 @@ const Home = () => {
             Bag
           </NavLink>
         </div>
-        <div>
+        <div className="w-full">
           <Outlet />
         </div>
       </section>

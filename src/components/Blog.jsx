@@ -10,7 +10,6 @@ const Blog = () => {
   const {blogPosts} = useBlogStore()
   return (
     <div className="w-full flex flex-col">
-      <Navbar />
       <h1 className="tracking-wider text-xl text-center font-semibold ">BLOG</h1>
       <div className="flex flex-row justify-around mt-6">
         <span className="bg-slate-50">Fashion</span>
