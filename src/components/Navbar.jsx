@@ -9,25 +9,27 @@ import {
 import React, { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import MenuList from "./MenuList";
+import Search from "./Search";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('women')
+  const [openSearch, setOpenSearch] = useState(false)
   
   return (
     <div className="relative w-full">
-      <div className="w-full flex flex-row justify-between items-center p-1">
+      <div className="w-full flex flex-row justify-between items-center p-1 px-4">
         <FontAwesomeIcon
           icon={faBars}
-          className="text-2xl"
+          className="text-2xl "
           onClick={() => setIsOpen(!isOpen)}
         />
-        <Link to="/" className=" flex flex-col -space-y-3 text-2xl font-medium">
-          <h1 className="text-center">Open </h1>
+        <Link to="/" className="flex flex-col items-center -space-y-3 text-2xl font-medium">
+          <h1 className="">Open </h1>
           <h1>Fashion</h1>
         </Link>
-        <div className="flex flex-row gap-x-4 text-2xl ">
-          <FontAwesomeIcon icon={faMagnifyingGlass} className="" />
+        <div className="flex flex-row space-x-4 text-2xl ">
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="" onClick={()=>setOpenSearch(true)} />
           <FontAwesomeIcon icon={faShoppingBag} className="" />
         </div>
       </div>
@@ -77,6 +79,11 @@ const Navbar = () => {
           <div className="w-full">{<MenuList />}</div>
         </nav>
       )}
+      {openSearch && (
+        // <div className="fixed w-full h-screen z-20 top-0 bottom-0">
+        <Search setOpenSearch={setOpenSearch}/>
+        // </div>
+        )}
     </div>
   );
 };

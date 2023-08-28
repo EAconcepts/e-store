@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./Navbar";
 import { NavLink, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css/pagination";
 import "swiper/css";
 import { Outlet } from "react-router-dom";
 import Just4uSlide from "./Just4uSlide";
@@ -65,6 +67,9 @@ const Home = () => {
             slidesPerView={1}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
+            modules={[Pagination]}
+            pagination={{ clickable: true, 
+              dynamicBullets: true}}
           >
             <SwiperSlide>
               <div className="bg-hero-1 bg-cover h-full w-full bg-center flex flex-col justify-end gap-[40%] text-4xl">
@@ -208,7 +213,7 @@ const Home = () => {
           />
           Your browser does not support the video tag.
         </video>
-        <div className="flex flex-col items-center w-full mt-10">
+        <div className="flex flex-col items-center w-full mt-10 px-2">
           <h1 className="px-2 text-center tracking-widest text-xl font-semibold">
             JUST FOR YOU
           </h1>
@@ -243,58 +248,58 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="w-full bg-[#f7f7f7] flex flex-col items-center mt-12 py-3 px-4">
-          <div className="font-bold text-2xl">
-            <h1>Open</h1>
-            <h1 className="-ml-2 -mt-1">Fashion</h1>
-          </div>
-          <p className="mb-2 text-center">
-            Making a luxurious lifestyle accessible for generous group of women
-            is our daily drive.
-          </p>
-          {divider}
-          <div className="flex flex-col mt-3 pb-8">
-            <div className="flex flex-row text-center">
-              <div className="flex flex-col">
-                <FontAwesomeIcon icon={faTruckFast} className="text-3xl" />
-                <span>Fast shipping Free on orders over $25</span>
+          <div className="w-full bg-[#f7f7f7] flex flex-col items-center mt-12 py-3 px-4">
+            <div className="font-bold text-2xl">
+              <h1>Open</h1>
+              <h1 className="-ml-2 -mt-1">Fashion</h1>
+            </div>
+            <p className="mb-2 text-center">
+              Making a luxurious lifestyle accessible for generous group of women
+              is our daily drive.
+            </p>
+            {divider}
+            <div className="flex flex-col mt-3 pb-8">
+              <div className="flex flex-row text-center justify-between gap-5">
+                <div className="flex flex-col">
+                  <FontAwesomeIcon icon={faTruckFast} className="text-3xl" />
+                  <span>Fast shipping Free on orders over $25</span>
+                </div>
+                <div className="flex flex-col">
+                  <FontAwesomeIcon icon={faSeedling} className="text-3xl" />
+                  <span className="text-center">
+                    Sustainable process from start to finish
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <FontAwesomeIcon icon={faSeedling} className="text-3xl" />
-                <span className="text-center">
-                  Sustainable process from start to finish
-                </span>
+              <div className="flex flex-row mt-4 justify-between gap-5">
+                <div className="flex flex-col">
+                  <FontAwesomeIcon icon={faPencil} className="text-3xl" />
+                  <span className="text-center">
+                    Unique designs and high-quality materials.
+                  </span>
+                </div>
+                <div className="flex flex-col">
+                  <FontAwesomeIcon icon={faBoltLightning} className="text-3xl" />
+                  <span className="text-center">
+                    Fast shipping. Free on orders over $25.
+                  </span>
+                </div>
               </div>
             </div>
-            <div className="flex flex-row mt-4">
-              <div className="flex flex-col">
-                <FontAwesomeIcon icon={faPencil} className="text-3xl" />
-                <span className="text-center">
-                  Unique designs and high-quality materials.
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <FontAwesomeIcon icon={faBoltLightning} className="text-3xl" />
-                <span className="text-center">
-                  Fast shipping. Free on orders over $25.
-                </span>
-              </div>
-            </div>
           </div>
-        </div>
-        <div className="w-full flex flex-col items-center ">
+        <div className="w-full flex flex-col items-center mt-10 ">
           <h1 className="uppercase text-xl font-semibold tracking-widest">
             Follow us
           </h1>
-          <i className="fab fa-instagram text-3xl"></i>
-          <div className="w-full grid grid-cols-2 px-2 gap-3 ">
+          <i className="fab fa-instagram text-3xl mt-2"></i>
+          <div className="w-full grid grid-cols-2 border place-content-center px-2 gap-3 ">
             {instagram &&
               instagram.map((insta, index) => (
                 <a
                   key={index}
                   href={insta.url}
                   target="_blank"
-                  className="relative w-full h-56 flex flex-col justify-end"
+                  className="relative w-full h-56 flex flex-col justify-end mt-2"
                 >
                   <img
                     src={insta.image}

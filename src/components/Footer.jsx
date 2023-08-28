@@ -38,7 +38,7 @@ const Footer = () => {
         
       </nav>
     </div>
-    <p className="w-full bg-gray-100 text-center py-3 text-xs">Copyright &copy OpenUI All Rights Reserved. </p>
+    <p className="w-full bg-gray-100 text-center py-3 text-xs">Copyright &copy; EAconcepts All Rights Reserved. </p>
     </div>
   );
 };

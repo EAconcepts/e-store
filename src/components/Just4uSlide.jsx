@@ -67,9 +67,9 @@ const Just4uSlide = () => {
     },
   };
   return (
-    <div className="w-full mt-3">
+    <div className="w-full mt-3 ">
       <Swiper
-        className=" w-full h-full justify-center ml-2"
+        className=" w-full h-full justify-center m"
         spaceBetween={10}
         slidesPerView={"1.3"}
         onSlideChange={() => console.log("slide change")}
