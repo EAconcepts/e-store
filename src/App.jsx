@@ -56,7 +56,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />}>
-            <Route path="all" element={<All />} />
+            <Route path="" element={<All />} />
             <Route path="apparel" element={<Apparel />} />
             <Route path="Dress" element={<Dress />} />
             <Route path="tshirt" element={<Tshirt />} />

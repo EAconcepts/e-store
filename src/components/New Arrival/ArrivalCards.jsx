@@ -20,10 +20,10 @@ const ArrivalCards = ({ arrayList }) => {
             </div>
           ))}
       </div>
-      <div className="">
+      <div className="mt-6">
         <Link
           to="/"
-          className="w-full flex flex-row justify-center items-center gap-x-2"
+          className="w-full flex flex-row justify-center items-center gap-x-2 font-medium"
         >
           Explore More
           <FontAwesomeIcon icon={faArrowRightLong} className=" opacity-70" />

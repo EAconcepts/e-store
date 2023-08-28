@@ -67,15 +67,14 @@ const Just4uSlide = () => {
     },
   };
   return (
-    <div className="w-full mt-10">
-      <h1 className="px-2">JUST FOR YOU</h1>
+    <div className="w-full mt-3">
       <Swiper
-        className=" w-full h-full  "
-        spaceBetween={30}
-        slidesPerView={"auto"}
+        className=" w-full h-full justify-center ml-2"
+        spaceBetween={10}
+        slidesPerView={"1.3"}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
-        modules={[Autoplay, Pagination]}
+        modules={[Pagination]}
         pagination={{
           clickable: true,
           dynamicBullets: true,
@@ -83,11 +82,14 @@ const Just4uSlide = () => {
       >
         {forYouArray &&
           forYouArray.map((obj) => (
-            <SwiperSlide key={obj.id} className="w-full mb-6">
+            <SwiperSlide
+              key={obj.id}
+              className="w-full mb-6 flex flex-col items-center pb-2"
+            >
               <img
                 src={obj.imgUrl}
                 alt={obj.title}
-                className="w-full object-cover object-top h-40"
+                className="w-full object-cover object-top h-72"
               />
               <div className="px-2">
                 <p className="text-sm">{obj.title}</p>

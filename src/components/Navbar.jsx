@@ -15,18 +15,21 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState('women')
   
   return (
-    <div className="relative w-full flex flex-row justify-between p-2">
-      <FontAwesomeIcon
-        icon={faBars}
-        className="text-lg"
-        onClick={() => setIsOpen(!isOpen)}
-      />
-      <Link to="/" className="text-lg">
-        Open Fashion
-      </Link>
-      <div className="flex flex-row gap-x-2">
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-        <FontAwesomeIcon icon={faShoppingBag} />
+    <div className="relative w-full">
+      <div className="w-full flex flex-row justify-between items-center p-1">
+        <FontAwesomeIcon
+          icon={faBars}
+          className="text-2xl"
+          onClick={() => setIsOpen(!isOpen)}
+        />
+        <Link to="/" className=" flex flex-col -space-y-3 text-2xl font-medium">
+          <h1 className="text-center">Open </h1>
+          <h1>Fashion</h1>
+        </Link>
+        <div className="flex flex-row gap-x-4 text-2xl ">
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="" />
+          <FontAwesomeIcon icon={faShoppingBag} className="" />
+        </div>
       </div>
       {isOpen && (
         <nav className="fixed w-full h-screen z-20 top-0 bottom-0 left-0 bg-white px-2">
@@ -71,11 +74,7 @@ const Navbar = () => {
               Kids
             </button>
           </div>
-          <div className="w-full">
-            {
-              <MenuList/>
-            }
-          </div>
+          <div className="w-full">{<MenuList />}</div>
         </nav>
       )}
     </div>

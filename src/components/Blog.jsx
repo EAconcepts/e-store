@@ -27,13 +27,11 @@ const Blog = () => {
             <div
               className={`relative h-64 w-full text-slate-100 flex flex-col justify-between`}
             >
-              {/* <div className="relative w-full"> */}
                 <img
                   src={article.image}
                   alt="image"
                   className="absolute w-full h-full -z-10 object-cover object-top"
                 />
-              {/* </div> */}
               <div className="flex justify-end p-3 text-lg">
                 <FontAwesomeIcon icon={faBookmark} />
               </div>

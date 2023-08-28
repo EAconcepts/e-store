@@ -1,16 +1,17 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-// import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
+
+export const divider = (
+  <div className="w-full flex flex-row justify-center my-3">
+    <div className="w-32 border-b border-slate-400"></div>
+  </div>
+);
 const Footer = () => {
-    const divider = (
-      <div className="w-full flex flex-row justify-center my-3">
-        <div className="w-32 border-b border-slate-400"></div>
-      </div>
-    );
+    
   return (
     <div>
-    <div className="w-full mt-10 flex flex-col items-center">
+    <div className="w-full mt-14 flex flex-col items-center">
       <div className="w-full flex flex-row  justify-center gap-x-16 text-lg font-bold">
         <i className="fab fa-twitter"></i>
         <i className="fab fa-instagram"></i>
