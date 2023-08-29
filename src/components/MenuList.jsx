@@ -49,15 +49,26 @@ const MenuList = () => {
     {
       name: "Bag",
     },
+    {
+      name: "Shoes",
+    },
+    {
+      name: "Beauty",
+    },
+    {
+      name: "Accessories",
+    },
   ];
 
   return (
     <div className="w-full ">
+      <div>
       {lists.map((menu, index) => (
         <div key={index}>
             <RenderMenuList name={menu.name} subItem={menu.subItems} />
         </div>
       ))}
+      </div>
     </div>
   );
 };

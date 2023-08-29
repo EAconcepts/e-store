@@ -72,8 +72,6 @@ const Just4uSlide = () => {
         className=" w-full h-full justify-center m"
         spaceBetween={10}
         slidesPerView={"1.3"}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         modules={[Pagination]}
         pagination={{
           clickable: true,

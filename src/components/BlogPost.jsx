@@ -1,17 +1,12 @@
 import React from "react";
-import Navbar from "./Navbar";
 import { useParams } from "react-router-dom";
 import useBlogStore from "./zustand/Store";
-import Footer from "./Footer";
 
 const BlogPost = () => {
   const { postId } = useParams();
   const { blogPosts } = useBlogStore();
   const post = blogPosts.find((post) => post.id === postId);
-//   console.log(post);
   return (
-    <div>
-      <Navbar />
       <div>
         <div>
           <img
@@ -30,8 +25,6 @@ const BlogPost = () => {
           </div>
         </div>
       </div>
-      <Footer/>
-    </div>
   );
 };
 

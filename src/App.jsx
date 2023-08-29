@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import All from "./components/New Arrival/All";
 import Dress from "./components/New Arrival/Dress";
 import Bag from "./components/New Arrival/Bag";
@@ -9,45 +9,9 @@ import Blog from "./components/Blog";
 import Navbar from "./components/Navbar";
 import BlogPost from "./components/BlogPost";
 import Footer from "./components/Footer";
-import MenuList from "./components/MenuList";
 import Contact from "./components/Contact";
+import NoMatch404 from "./components/NoMatch404";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    children: [
-      {
-        path: "/all",
-        element: <All />,
-      },
-      {
-        path: "/dress",
-        element: <Dress />,
-      },
-      {
-        path: "/bag",
-        element: <Bag />,
-      },
-      {
-        path: "/tshirt",
-        element: <Tshirt />,
-      },
-      {
-        path: "/apparel",
-        element: <Apparel />,
-      },
-    ],
-  },
-  {
-    path: "/blog",
-    element: <Blog />,
-  },
-  {
-    path: "/blog/:postId",
-    element: <BlogPost />,
-  },
-]);
 
 function App() {
   return (
@@ -63,11 +27,12 @@ function App() {
             <Route path="bag" element={<Bag />} />
           </Route>
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:postId" element={<BlogPost/>}/>
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NoMatch404/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
-      {/* <RouterProvider router={router} /> */}
     </div>
   );
 }
