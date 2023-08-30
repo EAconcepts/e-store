@@ -11,6 +11,7 @@ import BlogPost from "./components/BlogPost";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import NoMatch404 from "./components/NoMatch404";
+import Cart from "./components/Cart";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:postId" element={<BlogPost/>}/>
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart/>}/>
           <Route path="*" element={<NoMatch404/>}/>
         </Routes>
         <Footer />

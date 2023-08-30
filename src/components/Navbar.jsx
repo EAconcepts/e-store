@@ -37,13 +37,15 @@ const Navbar = () => {
           <h1 className="">Open </h1>
           <h1>Fashion</h1>
         </Link>
-        <div className="flex flex-row space-x-4 text-2xl ">
+        <div className="flex flex-row items-center space-x-4 text-2xl ">
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             className=""
             onClick={() => setOpenSearch(true)}
           />
-          <FontAwesomeIcon icon={faShoppingBag} className="" />
+          <NavLink to="/cart">
+            <FontAwesomeIcon icon={faShoppingBag} className="" />
+          </NavLink>
         </div>
       </div>
       {isOpen && (
@@ -91,11 +93,14 @@ const Navbar = () => {
           </div>
           <div className="w-full">{<MenuList />}</div>
           <div className="w-full absolute bottom-0 text-lg px-4">
-            <a href='tel:08139468253' className="flex flex-row items-center w-full pb-4">
+            <a
+              href="tel:08139468253"
+              className="flex flex-row items-center w-full pb-4"
+            >
               <FontAwesomeIcon icon={faPhone} />
               <span className="ml-3">(768) 713-8616</span>
             </a>
-            <Link to='#' className="flex flex-row pb-16">
+            <Link to="#" className="flex flex-row pb-16">
               <FontAwesomeIcon icon={faLocationDot} />
               <span className=" ml-3">Store locator</span>
             </Link>
