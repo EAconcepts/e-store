@@ -19,9 +19,69 @@ import Search from "./Search";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("women");
+  const [activeLink, setActiveLink] = useState("Women");
   const [openSearch, setOpenSearch] = useState(false);
 
+  const lists = [
+    {
+      category: "Women",
+      name: {
+        item: [
+          {
+            name: "New",
+            subItems: ["Outer", "Dress", "Blouse/Shirt", "T-shirt"],
+          },
+          { name: "Apparel" },
+          { name: "Bag" },
+          { name: "Shoes" },
+          { name: "Beauty" },
+          { name: "Accessories" },
+        ],
+      },
+
+      items: "New",
+      subItems: [],
+    },
+    {
+      category: "Men",
+      name: {
+        item: [
+          {
+            name: "New",
+            subItems: ["Outer", "Dress", "Blouse/Shirt", "T-shirt"],
+          },
+          { name: "Tops" },
+          // { name: "Bag" },
+          { name: "Shoes" },
+          // { name: "Beauty" },
+          { name: "Accessories" },
+        ],
+      },
+
+      items: "New",
+      subItems: [],
+    },
+    {
+      category: "Kids",
+      name: {
+        item: [
+          {
+            name: "New",
+            subItems: ["Outer", "Dress", "Blouse/Shirt", "T-shirt"],
+          },
+          { name: "Apparel" },
+          { name: "Bag" },
+          { name: "Shoes" },
+          { name: "Beauty" },
+          { name: "Accessories" },
+        ],
+      },
+
+      items: "New",
+      subItems: [],
+    },
+  ];
+  // console.log(lists)
   return (
     <div className="relative w-full">
       <div className="w-full flex flex-row justify-between items-center p-1 px-4">
@@ -57,42 +117,36 @@ const Navbar = () => {
           />
           {/* {Nav top Menu} */}
           <div className="flex flex-row w-full justify-around px- text-slate-400 ">
-            <button
-              className={` ${
-                activeLink === "women"
-                  ? "text-slate-800 font-medium uppercase border-b pb-1 border-yellow-900"
-                  : "uppercase border-b pb-1 border-slate-300"
-              }
+            {lists &&
+              lists.map((menu, index) => (
+                <button
+                  key={index}
+                  className={` ${
+                    activeLink === menu.category
+                      ? "text-slate-800 font-medium uppercase border-b pb-1 border-yellow-900"
+                      : "uppercase border-b pb-1 border-slate-300"
+                  }
               `}
-              onClick={() => setActiveLink("women")}
-            >
-              Women
-            </button>
-            <button
-              className={` ${
-                activeLink === "men"
-                  ? "text-slate-800 font-medium uppercase border-b pb-1 border-yellow-900"
-                  : "uppercase border-b pb-1 border-slate-300"
-              }
-              `}
-              onClick={() => setActiveLink("men")}
-            >
-              Men
-            </button>
-            <button
-              className={` ${
-                activeLink === "kids"
-                  ? "text-slate-800 font-medium uppercase border-b pb-1 border-yellow-900"
-                  : "uppercase border-b pb-1 border-slate-300"
-              }
-              `}
-              onClick={() => setActiveLink("kids")}
-            >
-              Kids
-            </button>
+                  onClick={() => setActiveLink(`${menu.category}`)}
+                >
+                  {menu.category}
+                </button>
+              ))}
           </div>
-          <div className="w-full">{<MenuList />}</div>
-          <div className="w-full absolute bottom-0 text-lg px-4">
+
+          <div className="w-full h-80 overflow-scroll">
+            <MenuList
+              setOpenNav={setIsOpen}
+              lists={
+                activeLink === "Women"
+                  ? lists[0]
+                  : activeLink === "Men"
+                  ? lists[1]
+                  : lists[2]
+              }
+            />
+          </div>
+          <div className="w-full absolute bottom-0 text-lg px-4 ">
             <a
               href="tel:08139468253"
               className="flex flex-row items-center w-full pb-4"
