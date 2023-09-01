@@ -79,8 +79,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://www.jennikayne.com/cdn/shop/products/cashmere-cocoon-cardigan-oatmeal-001_9112aba6-6d9e-4f4f-acdc-e22415fbe97e_1024x.jpg?v=1673989158"],
+      image: [
+        "https://www.jennikayne.com/cdn/shop/products/cashmere-cocoon-cardigan-oatmeal-001_9112aba6-6d9e-4f4f-acdc-e22415fbe97e_1024x.jpg?v=1673989158",
+      ],
       price: "120",
       liked: false,
     },
@@ -88,8 +89,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-       ["https://cdn-images.farfetch-contents.com/18/88/54/16/18885416_43595192_600.jpg"],
+      image: [
+        "https://cdn-images.farfetch-contents.com/18/88/54/16/18885416_43595192_600.jpg",
+      ],
       price: "120",
       liked: false,
     },
@@ -97,8 +99,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/20/550098/4.jpg?5091"],
+      image: [
+        "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/20/550098/4.jpg?5091",
+      ],
       price: "120",
       liked: false,
     },
@@ -106,8 +109,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://www.jennikayne.com/cdn/shop/products/cashmere-cocoon-cardigan-oatmeal-001_9112aba6-6d9e-4f4f-acdc-e22415fbe97e_1024x.jpg?v=1673989158"],
+      image: [
+        "https://www.jennikayne.com/cdn/shop/products/cashmere-cocoon-cardigan-oatmeal-001_9112aba6-6d9e-4f4f-acdc-e22415fbe97e_1024x.jpg?v=1673989158",
+      ],
       price: "120",
       liked: false,
     },
@@ -115,8 +119,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/95/1912942/1.jpg?8997"],
+      image: [
+        "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/95/1912942/1.jpg?8997",
+      ],
       price: "120",
       liked: false,
     },
@@ -124,8 +129,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/20/550098/4.jpg?5091"],
+      image: [
+        "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/20/550098/4.jpg?5091",
+      ],
       price: "120",
       liked: false,
     },
@@ -133,8 +139,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://tlyarncrafts.com/cdn/shop/products/2_3b76dd2a-3dc7-4d6b-a1cb-c4561ca8451f_1600x2375.png?v=1627935945"],
+      image: [
+        "https://tlyarncrafts.com/cdn/shop/products/2_3b76dd2a-3dc7-4d6b-a1cb-c4561ca8451f_1600x2375.png?v=1627935945",
+      ],
       price: "120",
       liked: false,
     },
@@ -142,8 +149,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://www.joebrowns.co.uk/media/catalog/product/W/K/WK609A_1.jpg?width=459&height=550&quality=90&bg-color=255,255,255&fit=bounds"],
+      image: [
+        "https://www.joebrowns.co.uk/media/catalog/product/W/K/WK609A_1.jpg?width=459&height=550&quality=90&bg-color=255,255,255&fit=bounds",
+      ],
       price: "120",
       liked: false,
     },
@@ -151,8 +159,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://content.purecollection.com/img/f/d997b-80793_lkby5_cloudblue_w_5.jpg"],
+      image: [
+        "https://content.purecollection.com/img/f/d997b-80793_lkby5_cloudblue_w_5.jpg",
+      ],
       price: "120",
       liked: false,
     },
@@ -160,8 +169,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/2b346b9d-c3d1-4d76-b092-4a406d113d8c/jordan-flight-heritage-mens-cardigan-pLc4v6.png"],
+      image: [
+        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/2b346b9d-c3d1-4d76-b092-4a406d113d8c/jordan-flight-heritage-mens-cardigan-pLc4v6.png",
+      ],
       price: "120",
       liked: false,
     },
@@ -169,8 +179,9 @@ It is a long established fact that a reader will be distracted by the readable c
       id: uuidv4(),
       title: "21WN",
       desc: "reversible angora cardigan",
-      image:
-        ["https://images.unsplash.com/photo-1541126006416-0d8c9d9c12d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyZGlnYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80"],
+      image: [
+        "https://images.unsplash.com/photo-1541126006416-0d8c9d9c12d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyZGlnYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      ],
       price: "120",
       liked: false,
     },
@@ -185,6 +196,33 @@ It is a long established fact that a reader will be distracted by the readable c
       ],
       price: "120",
       liked: false,
+      otherInfo: [
+        {
+          title: "Materials",
+          desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+        },
+        {
+          title: "Care",
+          desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+        },
+      ],
+      caution: [
+        "Do not use bleach",
+        "Do not tumble dry",
+        "Dry clean with tetrachloroethylene",
+        "iron at a maximum of 110C/230F",
+      ],
+      shipping: {
+        status: "free",
+        price: "",
+        from: "",
+        to: "",
+      },
+      policy: {
+        cod: "Dummy text for COD policy",
+        return:
+          "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+      },
     },
   ],
 }));
