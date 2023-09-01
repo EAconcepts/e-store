@@ -49,10 +49,10 @@ useEffect(()=>{
       </div>
       <div className="w-full mt-3 grid grid-cols-2 place-items-center px-2 gap-y-5 gap-x-3">
         {cardArray.map((item, index) => (
-          <Link to={`/category/${name}/${item.id}`} key={index} className="w-full flex flex-col">
+          <div key={index} className="w-full flex flex-col z-10">
             <div className="w-full">
               <img
-                src={item.image[0] }
+                src={item.image[0]}
                 alt={`${item.title} image`}
                 className="relative w-full h-48 object-cover border border-[#a8715c] bg-[#e7dcd7] p-1 -z-10"
               />
@@ -70,19 +70,24 @@ useEffect(()=>{
                   }}
                 >
                   {item.liked === true ? (
-                    <FontAwesomeIcon icon={faHeart} />
+                    <FontAwesomeIcon icon={faHeart} className="" />
                   ) : (
-                    <i className="far fa-heart"></i>
+                    <i className="far fa-heart "></i>
                   )}
                 </button>
               </div>
             </div>
-            <div className="mt-3">
-              <h3 className="uppercase font-medium">{item.title}</h3>
+            <Link
+                to={`/category/${name}/${item.id}`} className="mt-3">
+              <h3
+                className="uppercase font-medium"
+              >
+                {item.title}
+              </h3>
               <p className="text-sm">{item.desc}</p>
               <p className="text-price-brown">${item.price}</p>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
       {/* Pagination */}
@@ -93,7 +98,6 @@ useEffect(()=>{
             onClick={() => {
               setCurrentPage(currentPage - 1);
               setActivePage(currentPage - 1);
-
             }}
             className="text-lg"
           />
@@ -106,7 +110,9 @@ useEffect(()=>{
               setActivePage(index + 1);
             }}
             className={` text-black py-1 px-3 ${
-              activePage === index+1 ? "bg-slate-900 text-white" : "bg-[#faefeb]"
+              activePage === index + 1
+                ? "bg-slate-900 text-white"
+                : "bg-[#faefeb]"
             }`}
           >
             {index + 1}

@@ -8,48 +8,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import useBlogStore from "./zustand/Store";
 
 const Cart = () => {
+  const {cart} = useBlogStore()
   const [count, setCount] = useState(1);
-  const [cart, setCart] = useState([
-    {
-      id: uuidv4(),
-      name: "Lameri",
-      desc: "Recycle Boucle knit Cardigan Pink",
-      price: "$120",
-      image: "https://m.media-amazon.com/images/I/61RUMc7+vSL._AC_UY1100_.jpg",
-      qty: 1,
-    },
-    {
-      id: uuidv4(),
-      name: "5252 Bag",
-      desc: "2021 Signature Bag",
-      price: "$120",
-      image:
-        "https://www.stylecraze.com/wp-content/uploads/2018/01/50-Fashion-Tips-Every-Girl-Should-Know.jpg",
-      qty: 1,
-    },
-    {
-      id: uuidv4(),
-      name: "Croc Top",
-      desc: "2021 Signature Top",
-      price: "$120",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTnpgtQ1aXqIbAQJF0OAFjhkvlIFVidfTgpQ&usqp=CAU",
-      qty: 1,
-    },
-    {
-      id: uuidv4(),
-      name: "Fashion Dress",
-      desc: "2021 Fashion Modeling dress",
-      price: "$120",
-      image:
-        "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/09/1734902/1.jpg?7883",
-      qty: 1,
-    },
-  ]);
-  const navigatTo = useNavigate();
-  const subTotal = cart.reduce((acc, item) => {
+ let reversedCart =[]
+  for(let i = cart.length -1 ; i>=0; i--){
+    const valueAtIndex = cart[i]
+    reversedCart.push(valueAtIndex)
+  }
+ 
+  const navigateTo = useNavigate();
+  const subTotal = reversedCart.reduce((acc, item) => {
     return acc + parseInt(item.price.slice(1)) * item.qty;
   }, 0);
   return (
@@ -60,16 +31,24 @@ const Cart = () => {
             CART
           </h1>
           <div className="flex flex-col gap-y-4 mt-6 ">
-            {cart.map((item, index) => (
+            {reversedCart.map((item, index) => (
               <div key={index} className="w-full flex flex-col px-4 ">
                 <div key={index} className="w-full flex flex-row gap-x-5">
                   <img
+                    onClick={() =>
+                      navigateTo(`/category/${item.category}/${item.id}`)
+                    }
                     src={item.image}
                     alt={` ${item.name} image`}
                     className=" w-32 h-40 object-cover border border-[#a8715c] bg-[#e7dcd7] p-1"
                   />
                   <div className="w-full flex flex-col gap-y-2">
-                    <h2 className="font-semibold text-lg uppercase tracking-wider">
+                    <h2
+                      onClick={() =>
+                        navigateTo(`/category/${item.category}/${item.id}`)
+                      }
+                      className="font-semibold text-lg uppercase tracking-wider"
+                    >
                       {item.name}
                     </h2>
                     <p className="text-slate-500 text-[14px]">{item.desc}</p>
@@ -86,7 +65,7 @@ const Cart = () => {
                       <button
                         onClick={() => {
                           setCount((cart[index].qty = item.qty + 1));
-                          setCart(cart);
+                          // setCart(cart);
                         }}
                       >
                         <FontAwesomeIcon icon={faPlus} />
@@ -119,7 +98,7 @@ const Cart = () => {
           <div>
             <FontAwesomeIcon
               icon={faClose}
-              onClick={() => navigatTo(-1)}
+              onClick={() => navigateTo(-1)}
               className="text-3xl text-slate-500 px-4 py-2"
             />
           </div>
@@ -127,7 +106,7 @@ const Cart = () => {
             You have no items in your shopping Bag
           </p>
           <button
-            onClick={() => navigatTo("/")}
+            onClick={() => navigateTo("/")}
             className="w-full mb bg-black text-center text-lg flex flex-row gap-x-4 justify-center items-center py-2 text-white"
           >
             <FontAwesomeIcon icon={faShoppingBag} />

@@ -5,38 +5,39 @@ import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 import useBlogStore from "./zustand/Store";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGreaterThan,
   faPlus,
+  faRepeat,
+  faTag,
   faTruck,
 } from "@fortawesome/free-solid-svg-icons";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export const ProductDropDown = ({ product, content }) => {
+export const ProductDropDown = ({ product, content, policyTitle }) => {
   const [isOpen, setIsOPen] = useState(false);
-  
+
   return (
     <div className="w-full flex flex-col">
       <div className="mt-4 w-full flex flex-col px-6">
-        <div className="w-full flex flex-row justify-between">
-          <button onClick={()=>setIsOPen(!isOpen)} className="flex flex-row gap-x-2 items-center font-medium">
-            <FontAwesomeIcon icon={faTruck} className="" />
-            {product.shipping.status === "free" ? (
-              <span>Free Flat Rate Shipping</span>
-            ) : (
-              <span>Shipping Rate: $ {product.shipping.price}</span>
-            )}
-          </button>
-
-          <FontAwesomeIcon icon={faGreaterThan} rotation={ isOpen && 90} className="" />
-        </div>
-        {isOpen && (
-          <div className="ml-6">
-            {content}
-          </div>
-        )}
+        <button
+          onClick={() => setIsOPen(!isOpen)}
+          className="w-full flex flex-row justify-between"
+        >
+          <>
+            {policyTitle}
+            <FontAwesomeIcon
+              icon={faGreaterThan}
+              rotation={isOpen ? 90 : 0}
+              className=""
+            />
+          </>
+        </button>
+        {isOpen && <div className="ml-6">{content}</div>}
       </div>
     </div>
   );
@@ -44,7 +45,7 @@ export const ProductDropDown = ({ product, content }) => {
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const { apparelArray } = useBlogStore();
+  const { apparelArray, addToBasket, cart } = useBlogStore();
   const [activeSize, setActiveSize] = useState("s");
   const [activeColor, setActiveColor] = useState("blue");
   const product = apparelArray.find((prod) => prod.id === productId);
@@ -52,16 +53,69 @@ const ProductDetail = () => {
   dateFrom.setDate(dateFrom.getDate() + 2);
   let dateTo = new Date();
   dateTo.setDate(dateTo.getDate() + 5);
- const shipContent = (
-   <>
-     <p>Estimated to be delivered</p>
-     <p>
-       {dateFrom.toLocaleDateString()} - {dateTo.toLocaleDateString()}
-     </p>
-   </>
- );
+  const notify = (text) => toast(text);
+  const shipContent = (
+    <>
+      <p>Estimated to be delivered</p>
+      <p>
+        {dateFrom.toLocaleDateString()} - {dateTo.toLocaleDateString()}
+      </p>
+    </>
+  );
+  const codContent = (
+    <>
+      <p>{product.policy && product.policy.cod}</p>
+    </>
+  );
+  const shipTitle = (
+    <div className="flex flex-row gap-x-2 items-center font-medium">
+      <FontAwesomeIcon icon={faTruck} className="" />
+      {product.shipping.status === "free" ? (
+        <span>Free Flat Rate Shipping</span>
+      ) : (
+        <span>Shipping Rate: $ {product.shipping.price}</span>
+      )}
+    </div>
+  );
+  const codTitle = (
+    <div className="flex flex-row gap-x-2 items-center font-medium">
+      <FontAwesomeIcon icon={faTag} className="" />
+      <span>COD Policy</span>
+    </div>
+  );
+  const returnTitle = (
+    <div className="flex flex-row gap-x-2 items-center font-medium">
+      <FontAwesomeIcon icon={faRepeat} className="" />
+      <span>Return Policy</span>
+    </div>
+  );
+  const returnContent = (
+    <>
+      <p>{product.policy.return}</p>
+    </>
+  );
+  const navigateTo = useNavigate();
+  const handleAddToBasket = () => {
+    let productData = {
+      id: product.id,
+      category: product.category,
+      name: product.title,
+      desc: product.desc,
+      price: product.price,
+      image: product.image,
+      qty: 1,
+    };
+    addToBasket(productData);
+    notify("Added successfully");
+    setTimeout(() => {
+      navigateTo("/cart");
+    }, 2000);
+    //   console.log(cart);
+  };
+  //   console.log(cart);
   return (
     <div className="w-full mt-6 ">
+      <ToastContainer />
       <div className="w-full flex flex-col px-2">
         <Swiper
           className=" w-full h-full"
@@ -158,14 +212,20 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      <button className="w-full mt-6 flex flex-row justify-between items-center bg-black text-white px-4 py-2">
+      <button
+        onClick={handleAddToBasket}
+        className="w-full mt-6 flex flex-row justify-between items-center bg-black text-white px-4 py-2"
+      >
         <div className="flex flex-row items-center">
           <FontAwesomeIcon icon={faPlus} className="text-lg" />
           <span className="uppercase ml-2">ADD TO BASKET</span>
         </div>
         <div>
-          <i className="far fa-heart text-xl mr-3 px-2"></i>
-          {/* <i className="fa fa-heart text-lg"></i> */}
+          {!product.liked ? (
+            <i className="far fa-heart text-xl mr-3 px-2"></i>
+          ) : (
+            <i className="fa fa-heart text-lg mr-3 px-2"></i>
+          )}
         </div>
       </button>
       <div className="mt-8 w-full flex flex-col px-4 gap-y-8">
@@ -185,7 +245,21 @@ const ProductDetail = () => {
           </li>
         ))}
       </div>
-      <ProductDropDown product={product} content={shipContent}/>
+      <ProductDropDown
+        product={product}
+        content={shipContent}
+        policyTitle={shipTitle}
+      />
+      <ProductDropDown
+        product={product}
+        content={codContent}
+        policyTitle={codTitle}
+      />
+      <ProductDropDown
+        product={product}
+        content={returnContent}
+        policyTitle={returnTitle}
+      />
     </div>
   );
 };
