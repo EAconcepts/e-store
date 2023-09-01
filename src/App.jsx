@@ -13,6 +13,7 @@ import Contact from "./components/Contact";
 import NoMatch404 from "./components/NoMatch404";
 import Cart from "./components/Cart";
 import Category from "./components/Category";
+import ProductDetail from "./components/ProductDetail";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/category/:name" element={<Category/>}/>
+            <Route path="/category/:name/:productId" element={<ProductDetail/>}/>
 
           <Route path="*" element={<NoMatch404/>}/>
         </Routes>

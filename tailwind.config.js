@@ -11,6 +11,7 @@ export default {
       },
        colors: {
         'primary-black': '#4c4c4c',
+        'price-brown' : '#a8715c',
       },
     },
   },

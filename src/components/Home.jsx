@@ -79,9 +79,9 @@ const Home = () => {
                   <h2>& ACCESSORIES</h2>
                 </div>
                 <div className="flex flex-col items-center mb-10 text-white  ">
-                  <button className=" bg-[#4e5052] bg-opacity-90 w-fit text-lg px-6 py-1 opacity-75 rounded-2xl font-thin">
+                  <Link to='/category/apparel' className=" bg-[#4e5052] bg-opacity-90 w-fit text-lg px-6 py-1 opacity-75 rounded-2xl font-thin">
                     EXPLORE COLLECTIONS
-                  </button>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>
