@@ -45,10 +45,13 @@ export const ProductDropDown = ({ product, content, policyTitle }) => {
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const { apparelArray, addToBasket, cart } = useBlogStore();
+  const { name } = useParams();
+  const { allArray, addToBasket, preview, cart } = useBlogStore();
+  // console.log(preview)
   const [activeSize, setActiveSize] = useState("s");
   const [activeColor, setActiveColor] = useState("blue");
-  const product = apparelArray.find((prod) => prod.id === productId);
+  // const product = allArray[name].find((prod) => prod.id === productId);
+  const product = preview
   let dateFrom = new Date(Date.now());
   dateFrom.setDate(dateFrom.getDate() + 2);
   let dateTo = new Date();
@@ -206,7 +209,7 @@ const ProductDetail = () => {
                   activeSize === "l" ? "bg-slate-900 text-white" : "border"
                 }  rounded-full h-7 w-7 text-center`}
               >
-                S
+                L
               </button>
             </div>
           </div>

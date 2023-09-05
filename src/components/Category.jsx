@@ -1,35 +1,112 @@
-import { faFilter, faGreaterThan, faHeart, faLessThan, faList } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFilter,
+  faGreaterThan,
+  faHeart,
+  faLessThan,
+  faList,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import CategoryCard from "./CategoryCard";
 import useBlogStore from "./zustand/Store";
 
 const Category = () => {
-  const { name } = useParams();
-  const {apparelArray} = useBlogStore()
-  const filterCatgeroy = ["Women", "All apparel"];
-  
-  const [currentPage, setCurrentPage] = useState(1)
-  let objPerPage = 4
-  const totalPages =Math.ceil(apparelArray.length / objPerPage)
-  let startIndex = objPerPage * (currentPage-1) 
-  let endIndex =     objPerPage + startIndex 
-//   let cardArray = apparelArray.slice(startIndex, endIndex)
-  const [cardArray, setCardArray] = useState(apparelArray.slice(startIndex, endIndex));
-  const [activePage, setActivePage] = useState(1)
-// console.log(currentPage)
-  
-useEffect(()=>{
-    setCardArray(apparelArray.slice(startIndex, endIndex))
-},[currentPage])
+  let { names } = useParams();
+  let { categories } = useParams();
+  // console.log(names)
+  const menCategories = ["tops", "shoes", "accessories"];
+  const womenCategories = ["apparel", "bag", "shoes", "beauty", "accessories"];
+  const kidsCategories = ["apparel", "bag", "shoes", "beauty", "accessories"];
+  const [subCategory, setSubCateory] = useState(names.toLowerCase());
+
+  const { allArray } = useBlogStore();
+  const filterCatgeroy = ["Women", "All", "apparel"];
+  const [categoryOption, setOption] = useState("");
+  let allProducts = [];
+
+  let filtered = allArray.map((filter) => {
+    let filteredValues = Object.values(filter);
+    filteredValues.map((values) => {
+      // console.log(a)
+      values.map((obj) => {
+        allProducts.push(obj);
+        console.log();
+        return obj;
+      });
+    });
+    return filter;
+  });
+
+  let category = allArray.find((list, index) => {
+    let filteredCategory =
+      Object.keys(list).toString() === categories.toLowerCase() ||
+      Object.values(list).Category === subCategory;
+    return filteredCategory;
+  });
+
+  // console.log(subCategory);
+  let categoryValue;
+  if (category) {
+    categoryValue = Object.values(category);
+  }
+  let filteredSubCat = [];
+  if (subCategory !== "all") {
+    let i = categoryValue[0];
+    filteredSubCat = i.filter((obj) => {
+      return obj.category.toLowerCase() === subCategory.toLowerCase();
+    });
+    //  console.log(filteredSubCat);
+  }
+
+  // console.log(j)
+  if (subCategory === "all" && allProducts.length > 0) {
+    filtered = allProducts;
+  } else {
+    filtered = filteredSubCat;
+  }
+  const handleSelectChange = () => {
+    setOption(event.target.value);
+    setSubCateory(event.target.value);
+  };
+  useEffect(() => {
+    setSubCateory(names);
+  }, [names]);
+
+  // console.log(categories);
   return (
     <div className="flex flex-col w-full px-2 mt-6">
       <div className="w-full flex flex-row justify-between px-2">
-        <h3 className="uppercase">4500 {name}</h3>
+        <h3 className="uppercase">
+          {filtered.length} {categories}
+        </h3>
         <div className="flex flex-row gap-x-3 items-center">
-          <select className="rounded-full bg-slate-100 p-1">
-            <option>New</option>
+          <select
+            onChange={handleSelectChange}
+            className="rounded-full bg-slate-100 p-1"
+          >
+            <option value="" selected disabled hidden>
+              Categories
+            </option>
+            {
+            categories.toLowerCase() === "men"
+              ? menCategories.map((obj, index) => (
+                  <option key={index} value={obj}>
+                    {obj}
+                  </option>
+                ))
+              : categories.toLowerCase() === "women"
+              ? womenCategories.map((obj, index) => (
+                  <option key={index} value={obj}>
+                    {obj}
+                  </option>
+                ))
+              : kidsCategories.map((obj, index) => (
+                  <option key={index} value={obj}>
+                    {obj}
+                  </option>
+                ))}
           </select>
           <FontAwesomeIcon
             icon={faList}
@@ -47,88 +124,11 @@ useEffect(()=>{
             </button>
           ))}
       </div>
-      <div className="w-full mt-3 grid grid-cols-2 place-items-center px-2 gap-y-5 gap-x-3">
-        {cardArray.map((item, index) => (
-          <div key={index} className="w-full flex flex-col z-10">
-            <div className="w-full">
-              <img
-                src={item.image[0]}
-                alt={`${item.title} image`}
-                className="relative w-full h-48 object-cover border border-[#a8715c] bg-[#e7dcd7] p-1 -z-10"
-              />
-              <div className="w-full text-end -mt-7 z-20 pr-2">
-                <button
-                  className="text-price-brown"
-                  onClick={() => {
-                    const updatedArray = cardArray.map((obj) => {
-                      if (obj.id === item.id) {
-                        return { ...obj, liked: !obj.liked };
-                      }
-                      return obj;
-                    });
-                    setCardArray(updatedArray);
-                  }}
-                >
-                  {item.liked === true ? (
-                    <FontAwesomeIcon icon={faHeart} className="" />
-                  ) : (
-                    <i className="far fa-heart "></i>
-                  )}
-                </button>
-              </div>
-            </div>
-            <Link
-                to={`/category/${name}/${item.id}`} className="mt-3">
-              <h3
-                className="uppercase font-medium"
-              >
-                {item.title}
-              </h3>
-              <p className="text-sm">{item.desc}</p>
-              <p className="text-price-brown">${item.price}</p>
-            </Link>
-          </div>
-        ))}
-      </div>
-      {/* Pagination */}
-      <div className="w-full flex flex-row justify-center gap-x-6 mt-12 items-center">
-        {currentPage > 1 && (
-          <FontAwesomeIcon
-            icon={faLessThan}
-            onClick={() => {
-              setCurrentPage(currentPage - 1);
-              setActivePage(currentPage - 1);
-            }}
-            className="text-lg"
-          />
-        )}
-        {Array.from({ length: totalPages }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setCurrentPage(index + 1);
-              setActivePage(index + 1);
-            }}
-            className={` text-black py-1 px-3 ${
-              activePage === index + 1
-                ? "bg-slate-900 text-white"
-                : "bg-[#faefeb]"
-            }`}
-          >
-            {index + 1}
-          </button>
-        ))}
-        {currentPage < totalPages && (
-          <FontAwesomeIcon
-            icon={faGreaterThan}
-            onClick={() => {
-              setCurrentPage(currentPage + 1);
-              setActivePage(currentPage + 1);
-            }}
-            className="text-lg "
-          />
-        )}
-      </div>
+      { filtered.length > 0 ?
+      <CategoryCard categoryOption={categoryOption} filtered={filtered} />
+      : 
+      <h2 className="mt-10 w-full text-center text-lg font-medium">No match found!!</h2>
+}
     </div>
   );
 };

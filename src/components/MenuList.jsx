@@ -4,20 +4,20 @@ import { list } from "postcss";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const RenderMenuList = ({ name, subItem, setOpenNav }) => {
+const RenderMenuList = ({ name, subItem, setOpenNav, category }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigateTo = useNavigate();
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-  //  console.log(subItem)
+  //  console.log(category)
   return (
     <div className="w-full flex flex-col mt-6">
       <div className="relative flex flex-row justify-between px-7 mr-6">
         <button
           onClick={() => {
             setOpenNav(false)
-            navigateTo(`/category/${name}`)
+            navigateTo(`/${category}/${name}`)
           }}
           className="relative flex flex-row w-full"
         >
@@ -46,7 +46,7 @@ const RenderMenuList = ({ name, subItem, setOpenNav }) => {
     </div>
   );
 };
-const MenuList = ({ setOpenNav, lists }) => {
+const MenuList = ({ setOpenNav, lists, category }) => {
   const listss = [
     {
       name: "New",
@@ -78,6 +78,7 @@ const MenuList = ({ setOpenNav, lists }) => {
           <div key={index}>
             <RenderMenuList
               name={menu.name}
+              category={category}
               subItem={menu.subItems}
               setOpenNav={setOpenNav}
             />

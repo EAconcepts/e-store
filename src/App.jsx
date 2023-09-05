@@ -33,9 +33,8 @@ function App() {
           <Route path="/blog/:postId" element={<BlogPost/>}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart/>}/>
-          <Route path="/category/:name" element={<Category/>}/>
-            <Route path="/category/:name/:productId" element={<ProductDetail/>}/>
-
+          <Route path="/:categories/:names" element={<Category/>}/>
+          <Route path="/:categories/:names/:productId" element={<ProductDetail/>}/>
           <Route path="*" element={<NoMatch404/>}/>
         </Routes>
         <Footer />

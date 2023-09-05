@@ -137,6 +137,7 @@ const Navbar = () => {
           <div className="w-full h-80 overflow-scroll">
             <MenuList
               setOpenNav={setIsOpen}
+              category={activeLink}
               lists={
                 activeLink === "Women"
                   ? lists[0]

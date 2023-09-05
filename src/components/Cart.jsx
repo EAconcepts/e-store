@@ -21,11 +21,12 @@ const Cart = () => {
  
   const navigateTo = useNavigate();
   const subTotal = reversedCart.reduce((acc, item) => {
-    return acc + parseInt(item.price.slice(1)) * item.qty;
+    return (parseInt(acc) + parseInt(item.price)) * item.qty;
   }, 0);
+
   return (
     <div className="w-full flex flex-col">
-      {cart ? (
+      {cart.length > 0 ? (
         <>
           <h1 className="w-full mt-5 px-4 font-medium tracking-widest text-2xl font-serif">
             CART
@@ -38,7 +39,7 @@ const Cart = () => {
                     onClick={() =>
                       navigateTo(`/category/${item.category}/${item.id}`)
                     }
-                    src={item.image}
+                    src={item.image[0]}
                     alt={` ${item.name} image`}
                     className=" w-32 h-40 object-cover border border-[#a8715c] bg-[#e7dcd7] p-1"
                   />
@@ -71,7 +72,7 @@ const Cart = () => {
                         <FontAwesomeIcon icon={faPlus} />
                       </button>
                     </div>
-                    <p className="text-[#a8715c]">{item.price}</p>
+                    <p className="text-[#a8715c]">${item.price}</p>
                   </div>
                 </div>
               </div>
