@@ -47,7 +47,6 @@ const ProductDetail = () => {
   const { productId } = useParams();
   const { name } = useParams();
   const { allArray, addToBasket, preview, cart } = useBlogStore();
-  // console.log(preview)
   const [activeSize, setActiveSize] = useState("s");
   const [activeColor, setActiveColor] = useState("blue");
   // const product = allArray[name].find((prod) => prod.id === productId);
@@ -66,11 +65,13 @@ const ProductDetail = () => {
     </>
   );
   const codContent = (
+    Object.values(product).length >0 &&
     <>
       <p>{product.policy && product.policy.cod}</p>
     </>
   );
   const shipTitle = (
+    Object.values(product).length >0 &&
     <div className="flex flex-row gap-x-2 items-center font-medium">
       <FontAwesomeIcon icon={faTruck} className="" />
       {product.shipping.status === "free" ? (
@@ -81,44 +82,48 @@ const ProductDetail = () => {
     </div>
   );
   const codTitle = (
+    Object.values(product).length >0 &&
     <div className="flex flex-row gap-x-2 items-center font-medium">
       <FontAwesomeIcon icon={faTag} className="" />
       <span>COD Policy</span>
     </div>
   );
   const returnTitle = (
+    Object.values(product).length >0 &&
     <div className="flex flex-row gap-x-2 items-center font-medium">
       <FontAwesomeIcon icon={faRepeat} className="" />
       <span>Return Policy</span>
     </div>
   );
   const returnContent = (
+    Object.values(product).length >0 &&
     <>
       <p>{product.policy.return}</p>
     </>
   );
   const navigateTo = useNavigate();
   const handleAddToBasket = () => {
-    let productData = {
-      id: product.id,
-      category: product.category,
-      name: product.title,
-      desc: product.desc,
-      price: product.price,
-      image: product.image,
-      qty: 1,
-    };
-    addToBasket(productData);
+    // let productData = {
+    //   id: product.id,
+    //   category: product.category,
+    //   name: product.title,
+    //   desc: product.desc,
+    //   price: product.price,
+    //   image: product.image,
+    //   qty: 1,
+    // };
+    let productDetails = product
+    addToBasket(productDetails);
     notify("Added successfully");
     setTimeout(() => {
       navigateTo("/cart");
     }, 2000);
-    //   console.log(cart);
   };
-  //   console.log(cart);
   return (
     <div className="w-full mt-6 ">
       <ToastContainer />
+        {Object.values(product).length >0  ?
+<>
       <div className="w-full flex flex-col px-2">
         <Swiper
           className=" w-full h-full"
@@ -263,6 +268,10 @@ const ProductDetail = () => {
         content={returnContent}
         policyTitle={returnTitle}
       />
+      </>
+      :
+      <p className="font-medium  text-center my-10">Something Went wrong!!</p>
+}
     </div>
   );
 };

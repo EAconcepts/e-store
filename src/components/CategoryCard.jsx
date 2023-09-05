@@ -10,7 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useBlogStore from './zustand/Store';
 import {Link, useParams} from 'react-router-dom'
 
-const CategoryCard = ({categoryOption, filtered}) => {
+const CategoryCard = ({categoryOption, filtered, showProduct}) => {
+    // console.log(showProduct)
+    if(showProduct.length >0 ){
+        filtered= showProduct
+    }
+
     const {name} = useParams()
     const {categories} = useParams()
   const { allArray, preview, setPreview } = useBlogStore();
@@ -29,9 +34,9 @@ const CategoryCard = ({categoryOption, filtered}) => {
     const [activePage, setActivePage] = useState(1);
   return (
     <div>
-      <div className="w-full mt-3 grid grid-cols-2 place-items-center px-2 gap-y-5 gap-x-3">
+      <div className="w-full mt-3 grid grid-cols-2 place-items-center px-2 gap-y-5 gap-x-3  py-2">
         {cardArray.length >0 && cardArray.map((item, index) => (
-          <div key={index} className="w-full flex flex-col z-10">
+          <div key={index} className="w-full flex flex-col z-10 h-72 ">
             <div className="w-full">
               <img
                 src={item.image[0]}
@@ -64,8 +69,8 @@ const CategoryCard = ({categoryOption, filtered}) => {
             onClick={()=>setPreview(cardArray.find((prev)=>prev.id === item.id)
             )}
              className="mt-3">
-              <h3 className="uppercase font-medium">{item.title}</h3>
-              <p className="text-sm">{item.desc}</p>
+              <h3 className={`uppercase font-medium text- ${item.title.length >=26 && 'text-[10x]'}`}>{item.title.substring(0, 28)}...</h3>
+              {/* <p className="text-sm">{item.desc.substring(0, 12)}</p> */}
               <p className="text-price-brown">${item.price}</p>
             </Link>
           </div>
@@ -83,6 +88,7 @@ const CategoryCard = ({categoryOption, filtered}) => {
             className="text-lg"
           />
         )}
+        <div className=' flex flex-row overflow-ato '>
         {Array.from({ length: totalPages }).map((_, index) => (
           <button
             key={index}
@@ -90,15 +96,16 @@ const CategoryCard = ({categoryOption, filtered}) => {
               setCurrentPage(index + 1);
               setActivePage(index + 1);
             }}
-            className={` text-black py-1 px-3 ${
+            className={` text-black py-1 px-3 ${index > activePage +1 && 'hidden'} ${ index < activePage -3 && 'hidden'} ${
               activePage === index + 1
                 ? "bg-slate-900 text-white"
-                : "bg-[#faefeb]"
+                : "bg-[#faefeb]" 
             }`}
           >
             {index + 1}
           </button>
         ))}
+        </div>
         {currentPage < totalPages && (
           <FontAwesomeIcon
             icon={faGreaterThan}

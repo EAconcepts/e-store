@@ -2,8 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import React from "react";
+import {useNavigate} from 'react-router-dom'
+import useBlogStore from "../zustand/Store";
 
 const ArrivalCards = ({ arrayList }) => {
+  const {setPreview, preview} = useBlogStore()
+  const navigateTo = useNavigate()
   return (
     <div className="w-full p-2 ">
       <div className="w-full grid grid-cols-2 place-items-center gap-y-3">
@@ -11,9 +15,13 @@ const ArrivalCards = ({ arrayList }) => {
           arrayList.map((obj) => (
             <div className="text-center text-sm" key={obj.id}>
               <img
-                src={obj.imgUrl}
+                src={obj.image}
                 alt={obj.title}
                 className="h-36 w-36 object-cover"
+                onClick={() => {
+                  setPreview(arrayList.find((item) => obj.id === item.id));
+                  navigateTo(`/category/${obj.category}/${obj.id}`);
+                }}
               />
               <p className="text-[#4c4c4c]">{obj.title}</p>
               <p className=" text-[#dd8560]">{obj.price}</p>

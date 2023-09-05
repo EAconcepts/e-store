@@ -14,43 +14,47 @@ import useBlogStore from "./zustand/Store";
 
 const Category = () => {
   let { names } = useParams();
-  let { categories } = useParams();
-  // console.log(names)
+  let { categories } = useParams() 
+  const [categ, setCateg] = useState(categories)
+  // console.log(categories)
   const menCategories = ["tops", "shoes", "accessories"];
   const womenCategories = ["apparel", "bag", "shoes", "beauty", "accessories"];
   const kidsCategories = ["apparel", "bag", "shoes", "beauty", "accessories"];
   const [subCategory, setSubCateory] = useState(names.toLowerCase());
+  const [activeSubCat, setActiveSub] = useState('')
 
   const { allArray } = useBlogStore();
-  const filterCatgeroy = ["Women", "All", "apparel"];
+  const filterCatgeroy = ["women", "men", "kids"];
   const [categoryOption, setOption] = useState("");
   let allProducts = [];
+  const [showProduct, setShowProduct] = useState([])
 
   let filtered = allArray.map((filter) => {
     let filteredValues = Object.values(filter);
     filteredValues.map((values) => {
-      // console.log(a)
       values.map((obj) => {
         allProducts.push(obj);
         console.log();
         return obj;
       });
     });
+    // setShowProduct(filter)
     return filter;
   });
 
   let category = allArray.find((list, index) => {
     let filteredCategory =
-      Object.keys(list).toString() === categories.toLowerCase() ||
-      Object.values(list).Category === subCategory;
+      Object.keys(list).toString() === categ.toLowerCase() 
+      // || Object.values(list).Category === subCategory;
+      console.log(filteredCategory)
     return filteredCategory;
   });
-
   // console.log(subCategory);
   let categoryValue;
   if (category) {
     categoryValue = Object.values(category);
   }
+  console.log(category)
   let filteredSubCat = [];
   if (subCategory !== "all") {
     let i = categoryValue[0];
@@ -67,23 +71,29 @@ const Category = () => {
     filtered = filteredSubCat;
   }
   const handleSelectChange = () => {
-    setOption(event.target.value);
+    // setOption(event.target.value);
     setSubCateory(event.target.value);
   };
   useEffect(() => {
     setSubCateory(names);
   }, [names]);
+let filteredd; 
 
-  // console.log(categories);
+  useEffect(()=>{
+    console.log(showProduct)
+    
+  },[filtered])
+  // console.log(filteredd);
   return (
     <div className="flex flex-col w-full px-2 mt-6">
       <div className="w-full flex flex-row justify-between px-2">
         <h3 className="uppercase">
-          {filtered.length} {categories}
+          {filtered.length} {categ}
         </h3>
         <div className="flex flex-row gap-x-3 items-center">
           <select
             onChange={handleSelectChange}
+            disabled={categories==='category'}
             className="rounded-full bg-slate-100 p-1"
           >
             <option value="" selected disabled hidden>
@@ -117,15 +127,30 @@ const Category = () => {
       </div>
       <div className="w-full flex flex-row gap-x-2 mt--2">
         {filterCatgeroy &&
-          filterCatgeroy.map((filtered, index) => (
-            <button key={index} className="border rounded-full p-1 px-2">
-              {filtered}
+          filterCatgeroy.map((filteredItem, index) => (
+            <button key={index} onClick={()=>{
+              setActiveSub(filteredItem)
+              setCateg(filteredItem)
+              let a = allArray.filter((b)=>{
+                // console.log(b)
+               let c= Object.keys(b).includes(filteredItem)
+                console.log(c)
+                return c
+              })
+              let e= Object.values(a[0])
+              let f = e[0]
+              // console.log(f)
+              setShowProduct(f) 
+              // console.log(filtered)
+            }} className={`border rounded-full p-1 px-2 ${activeSubCat ===filteredItem && ' bg-price-brown'}`}>
+              {filteredItem}
               <span className="ml-2">x</span>
             </button>
           ))}
+          {/* {console.log(categ)} */}
       </div>
       { filtered.length > 0 ?
-      <CategoryCard categoryOption={categoryOption} filtered={filtered} />
+      <CategoryCard categoryOption={categoryOption} filtered={filtered} showProduct={showProduct}/>
       : 
       <h2 className="mt-10 w-full text-center text-lg font-medium">No match found!!</h2>
 }

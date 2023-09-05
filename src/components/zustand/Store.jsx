@@ -88,6 +88,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://img.ltwebstatic.com/images3_pi/2023/05/01/1682920631c170427068c1079bb2a3b9a8d3d1aa0e_thumbnail_720x.webp",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -120,13 +121,424 @@ It is a long established fact that a reader will be distracted by the readable c
         {
           id: uuidv4(),
           category: "apparel",
-          title: "Number 2 apparel - women",
+          title: "Ladies Denim Shorts Pants",
           desc: "reversible angora cardigan",
           image: [
-            "https://cdn-images.farfetch-contents.com/18/88/54/16/18885416_43595192_600.jpg",
-            "https://www.insightconceptstore.com/media/catalog/product/cache/050b2614040a55216c920dcd266d643c/p/e/pe22---maisonmargiela---s50ha1058s17993124m.jpg",
+            "https://image.made-in-china.com/2f0j00mQuogVMCCbrc/Ladies-Denim-Shorts-Pants-Skinny-Casual-Women-Hole-Jean-Short-Women-Apparel.jpg",
+            "https://image.made-in-china.com/44f3j00HZPidnQFAauk/Ladies-Denim-Shorts-Pants-Skinny-Casual-Women-Hole-Jean-Short-Women-Apparel.webp",
           ],
           price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "apparel",
+          title: "Stylish Office & Work clothing",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://i.insider.com/634d9bda6bd527001914fa0e",
+            "https://www.yournextshoes.com/wp-content/uploads/2021/02/Everlane-Oversized-Blazer.jpg",
+            "https://minimumfashion.com/cdn/shop/products/224019953-999_600x.jpg?v=1691025247",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "apparel",
+          title: "Casual Fashion long sleeve sexy apparel",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://image.made-in-china.com/2f0j00qbAuDZmPLaoc/New-Design-Ladies-Apparel-Casual-Style-Long-Sleeve-Fashion-Sexy-Women-Tops-and-Blousee.webp",
+            "https://image.made-in-china.com/2f0j00KkwpHfdsLtob/New-Design-Ladies-Apparel-Casual-Style-Long-Sleeve-Fashion-Sexy-Women-Tops-and-Blousee.webp",
+            "https://image.made-in-china.com/202f0j00MoJpDHdPETbc/New-Design-Ladies-Apparel-Casual-Style-Long-Sleeve-Fashion-Sexy-Women-Tops-and-Blousee.webp",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "apparel",
+          title: "Women T-shirts Jacket",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://swansapparel.com/cdn/shop/files/367809279_1036690121116528_8766716793083960801_n.jpg?v=1692828703&width=1500",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmdFDh37rtjd1ocGR2Mw7Mwncbtx7RC5SvHnzLFIzH95QqolYHm-ERdczMB6g2t63q6fE&usqp=CAU",
+            "https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2_180x.png?v=1691705433%20180w%20241h,%20https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2_360x.png?v=1691705433%20360w%20481h,%20https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2_540x.png?v=1691705433%20540w%20722h,%20https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2_720x.png?v=1691705433%20720w%20963h,%20https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2_900x.png?v=1691705433%20900w%201203h,%20https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2_1080x.png?v=1691705433%201080w%201444h,%20https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2_1296x.png?v=1691705433%201296w%201733h,%20https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2_1512x.png?v=1691705433%201512w%202021h,%20https://cdn.shopify.com/s/files/1/1136/2606/files/TheMerlyJacket-OriginalWash-ABLE-2.png?v=1691705433%201532w%202048h,",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "bag",
+          title: "Crocodile Embossed Square Bag",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://img.ltwebstatic.com/images3_spmp/2023/05/25/1684984630a4301452063c8250f96d34976e14b32c_thumbnail_405x552.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsYdwexoKdhguhJRa83Y3hEI39HJKFxZ-TE4lkNJg8-QrZR4MIp2k-CdjfAYeK6CsQL38&usqp=CAU",
+            "https://img.ltwebstatic.com/images3_spmp/2023/05/26/1685069880f03a7d31f85fd6ecf0822f3c924c855f_thumbnail_720x.webp",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "bag",
+          title:
+            "Women Handbag For Women Bag Ladies Purse Crossbody Satchel - White",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/30/316606/1.jpg?3322",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/30/316606/2.jpg?3322",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/30/316606/3.jpg?7076",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "bag",
+          title: "3 In 1 Women Bag Crossbody Bag Handbag Ladies Purse",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/19/928937/1.jpg?8762",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/19/928937/2.jpg?8762",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/19/928937/4.jpg?8762",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "shoes",
+          title: "FLAT FEMALE SHOE - WOMEN OUTDOOR CANVAS - BLACK",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/46/1012152/1.jpg?8222",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/46/1012152/2.jpg?8222",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/46/1012152/3.jpg?8222",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "shoes",
+          title: "Zara women Shoe",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://static-uc.olist.ng/upload/20200722/1291jurrqtq9.jpg",
+            "https://static-uc.olist.ng/upload/20200722/1291kkf1olj7.jpg",
+            "https://static-uc.olist.ng/upload/20200722/1291lhyp4gzl.jpg",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "shoes",
+          title: "BETSEY JOHNSON IVORY EMBELLISHED STRAP BLOCK HEEL SANDAL",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://shoepifystore.com/cdn/shop/files/BETSEYJOHNSONIVORYEMBELLISHEDSTRAPBLOCKHEELSANDAL1.webp?v=1692902533&width=800",
+            "https://shoepifystore.com/cdn/shop/files/BETSEYJOHNSONIVORYEMBELLISHEDSTRAPBLOCKHEELSANDAL7.webp?v=1692902552&width=800",
+            "https://shoepifystore.com/cdn/shop/files/BETSEYJOHNSONIVORYEMBELLISHEDSTRAPBLOCKHEELSANDAL5.webp?v=1692902552&width=800",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "shoes",
+          title: "NEXT BROWN LOW BLOCK HEEL MULE",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://shoepifystore.com/cdn/shop/files/NEXTBROWNLOWBLOCKHEELMULE1.webp?v=1692964180&width=300",
+            "https://shoepifystore.com/cdn/shop/files/NEXTBROWNLOWBLOCKHEELMULE.webp?v=1692964180&width=300",
+          ],
+          price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -166,6 +578,171 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaVkpISGhWDCNU7u-nwKeO4px4wYNhzFuzBuY-7_6XJ2Er-Pb95xOPSE82M0yDwvJNx6k&usqp=CAU",
           ],
           price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "acceesories",
+          title: "Women's Computer Glasses Cateye TR90 Optical Eyewear Frames",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/48/927299/1.jpg?6610",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/48/927299/2.jpg?6610",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/48/927299/3.jpg?6611",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "acceesories",
+          title: "LZQpeARL Fashion Sunglasses Chain",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://m.media-amazon.com/images/I/71drFmFFtWL._AC_SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71bhQcrf39L._AC_SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/51igThK7DfL._AC_SL1500_.jpg",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "acceesories",
+          title: "female jewelry sets Bracelet Necklace Earrings and ring gift",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://static-uc.olist.ng/upload/i03/20220823/37k7jbvgc4xu.jpg",
+            "https://static-uc.olist.ng/upload/i03/20220823/37k7jbvedwjl.jpg",
+            "https://static-uc.olist.ng/upload/i03/20220823/37k7jbvgc4xt.jpg",
+          ],
+          price: "120",
+          qty: 1,
+          liked: false,
+          otherInfo: [
+            {
+              title: "Materials",
+              desc: `We work with monitoring programmes to ensure compliance with safety, health and quality standards for our products.`,
+            },
+            {
+              title: "Care",
+              desc: `To keep your jackets and coats clean, you only need to freshen them up and over them with a cloth or a clothes brush. If you need to dry clean a garment, look for a dry cleaner that uses technologies that are respectful og the environment.`,
+            },
+          ],
+          caution: [
+            "Do not use bleach",
+            "Do not tumble dry",
+            "Dry clean with tetrachloroethylene",
+            "iron at a maximum of 110C/230F",
+          ],
+          shipping: {
+            status: "free",
+            price: "",
+            from: "",
+            to: "",
+          },
+          policy: {
+            cod: "Dummy text for COD policy",
+            return:
+              "All products purchased not satisfying the specifications are liable to be returned within the period of 7days. \n Do not collect the product if the seal is removed.",
+          },
+        },
+        {
+          id: uuidv4(),
+          category: "acceesories",
+          title: "Women Earring & Necklace Jewelry Set-Gold",
+          desc: "reversible angora cardigan",
+          image: [
+            "https://images.yaoota.com/gIrVcOOv4EZ7e_d9gwLojk7Lq2o=/trim/fit-in/500x500/filters:quality(80)/yaootaweb-production-ng/media/crawledproductimages/3bf973d5b7d49a9bdc76a4c75d9ff1a608e72e3c.jpg",
+            "https://images.yaoota.com/2mAMLMwi3rg_fO509k48ITFIodY=/trim/fit-in/500x500/filters:quality(80)/yaootaweb-production-ng/media/crawledproductimages/f91edfb7d0dcc493a34e3e3cf8e9471308d1e2cd.jpg",
+            "https://images.yaoota.com/vsUT_Jo71QoLSI6XdPOlPnD6Ld0=/trim/fit-in/500x500/filters:quality(80)/yaootaweb-production-ng/media/crawledproductimages/a25137590970a070d9f57a7061c010d142c6644b.jpg",
+          ],
+          price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -210,6 +787,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://i.ebayimg.com/images/g/qBEAAOSw-lVfvOpE/s-l1200.webp",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -250,6 +828,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbaeLPJ682x9w-QgFXJeQT8BT4IBpzydhJQUbuLKHqIxOR1Uf8y-VpRDnG6MsyeA00Xyc&usqp=CAU",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -290,6 +869,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://hudsonvalleystylemagazine.com/wp-content/uploads/2021/12/IMG_0893wdw.jpg",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -330,6 +910,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQeo2zqRaB0b97Dm6dVs9Ku0SJwHN4EQ9HiamXQxAfMGRkieEXM6zED9l1NTgv-4WMC8&usqp=CAU",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -375,6 +956,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoAQUU2vC4UF_tkdJNHJumSgslsgExGEoakohEbbGJAf0RnOrrHyEXNpLmBmv6f4hDTk&usqp=CAU",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -415,6 +997,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://assets.ajio.com/medias/sys_master/root/20221125/OQXr/6380e6faf997ddfdbd9e543c/-473Wx593H-469293861-lbeige-MODEL.jpg",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -455,6 +1038,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://static.nike.com/a/images/t_default/1dbe5942-6e69-4ebc-aa30-27b529c21110/jordan-flight-heritage-mens-cardigan-pLc4v6.png",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -495,6 +1079,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://i5.walmartimages.com/asr/66eee7e8-a01c-44c3-82d2-93f71f81c90c.5595c815a8d75b06ed4e61d3f0bf2991.jpeg",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {
@@ -535,6 +1120,7 @@ It is a long established fact that a reader will be distracted by the readable c
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjyw-dVqZ_g07hTPdtEM0dxM43EYRFVKqysXyiGSAp9MP4H_tRVl5qdicyAK7c_Dk4fuU&usqp=CAU",
           ],
           price: "120",
+          qty: 1,
           liked: false,
           otherInfo: [
             {

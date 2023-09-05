@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import useBlogStore from "./zustand/Store";
 
 const Cart = () => {
-  const {cart} = useBlogStore()
+  const {cart, setPreview, preview} = useBlogStore()
   const [count, setCount] = useState(1);
  let reversedCart =[]
   for(let i = cart.length -1 ; i>=0; i--){
@@ -23,7 +23,7 @@ const Cart = () => {
   const subTotal = reversedCart.reduce((acc, item) => {
     return (parseInt(acc) + parseInt(item.price)) * item.qty;
   }, 0);
-
+console.log(cart)
   return (
     <div className="w-full flex flex-col">
       {cart.length > 0 ? (
@@ -36,8 +36,11 @@ const Cart = () => {
               <div key={index} className="w-full flex flex-col px-4 ">
                 <div key={index} className="w-full flex flex-row gap-x-5">
                   <img
-                    onClick={() =>
-                      navigateTo(`/category/${item.category}/${item.id}`)
+                    onClick={() =>{
+                      setPreview(cart.find((prev) => prev.id === item.id))
+                      console.log(preview)
+                        navigateTo(`/category/${item.category}/${item.id}`)
+                    }
                     }
                     src={item.image[0]}
                     alt={` ${item.name} image`}
@@ -50,7 +53,7 @@ const Cart = () => {
                       }
                       className="font-semibold text-lg uppercase tracking-wider"
                     >
-                      {item.name}
+                      {item.title}
                     </h2>
                     <p className="text-slate-500 text-[14px]">{item.desc}</p>
                     <div className="flex flex-row gap-x-3 text-slate-500">
