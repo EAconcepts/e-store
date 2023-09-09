@@ -30,7 +30,7 @@ const ArrivalCards = ({ arrayList }) => {
       </div>
       <div className="mt-6">
         <Link
-          to="/"
+          to="/categories/all"
           className="w-full flex flex-row justify-center items-center gap-x-2 font-medium"
         >
           Explore More

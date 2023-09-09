@@ -28,6 +28,7 @@ const Category = () => {
   const [categoryOption, setOption] = useState("");
   let allProducts = [];
   const [showProduct, setShowProduct] = useState([])
+  const [ toggleView, setToggleView] = useState(false)
 
   let filtered = allArray.map((filter) => {
     let filteredValues = Object.values(filter);
@@ -120,6 +121,7 @@ let filteredd;
           </select>
           <FontAwesomeIcon
             icon={faList}
+            onClick={()=>setToggleView(!toggleView)}
             className="border rounded-full bg-slate-100 p-2"
           />
           <FontAwesomeIcon icon={faFilter} />
