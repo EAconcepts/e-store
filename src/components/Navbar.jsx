@@ -16,12 +16,16 @@ import React, { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import MenuList from "./MenuList";
 import Search from "./Search";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Women");
   const [openSearch, setOpenSearch] = useState(false);
-
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" },
+};
   const lists = [
     {
       category: "Women",
@@ -109,7 +113,10 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <nav className="fixed w-full h-screen z-20 top-0 bottom-0 left-0 bg-white px-2">
+        <motion.nav 
+          animate={isOpen ? 'open' : 'closed'}
+          variants={variants}
+        className="fixed w-full h-screen z-20 top-0 bottom-0 left-0 bg-white px-2">
           <FontAwesomeIcon
             icon={faClose}
             className="text-xl p-2 "
@@ -150,16 +157,16 @@ const Navbar = () => {
           <div className="w-full absolute bottom-0 text-lg px-4 ">
             <a
               href="tel:08139468253"
-              className="flex flex-row items-center w-full pb-4"
+              className="flex flex-row items-center w-full pb-2"
             >
               <FontAwesomeIcon icon={faPhone} />
               <span className="ml-3">(768) 713-8616</span>
             </a>
-            <Link to="#" className="flex flex-row pb-16">
+            <Link to="#" className="flex flex-row pb-7">
               <FontAwesomeIcon icon={faLocationDot} />
               <span className=" ml-3">Store locator</span>
             </Link>
-            <div className="flex flex-row w-full justify-center gap-x-7 text-2xl pb-10">
+            <div className="flex flex-row w-full justify-center gap-x-7 text-2xl pb-5">
               <a href="https://twitter.com" target="_blank">
                 <i className="fab fa-twitter"></i>
               </a>
@@ -171,7 +178,7 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-        </nav>
+        </motion.nav>
       )}
       {openSearch && (
         // <div className="fixed w-full h-screen z-20 top-0 bottom-0">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { NavLink, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,8 +15,12 @@ import {
   faSeedling,
   faTruckFast,
 } from "@fortawesome/free-solid-svg-icons";
+import {motion} from 'framer-motion'
+import { lazy, useEffect, Suspense } from "react";
+const lazyJust4uSlide = lazy(()=>import('./Just4uSlide'))
 
 const Home = () => {
+  const [isComponentInView, setIsComponentInView] = useState(false);
   const settings = {
     // dots: true,
     // infinite: false,
@@ -56,6 +60,27 @@ const Home = () => {
         "https://i.pinimg.com/originals/5e/b6/6c/5eb66c4e498377df2264caf93d923b77.jpg",
     },
   ];
+  const MotionJust4YouSlide = motion(Just4uSlide)
+  
+  useEffect(() => {
+    // Create an Intersection Observer to detect when the component is in the viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsComponentInView(true);
+          observer.disconnect(); // Stop observing once the component is in view
+        }
+      });
+    });
+    const targetElement = document.getElementById("lazy-component-placeholder");
+    if (targetElement) {
+      observer.observe(targetElement);
+    }
+    return () => {
+      observer.disconnect(); // Cleanup when the component unmounts
+    };
+  }, []);
+
   return (
     <div>
       {/* {Hero slide} */}
@@ -68,8 +93,7 @@ const Home = () => {
             // onSlideChange={() => console.log("slide change")}
             // onSwiper={(swiper) => console.log(swiper)}
             modules={[Pagination]}
-            pagination={{ clickable: true, 
-              dynamicBullets: true}}
+            pagination={{ clickable: true, dynamicBullets: true }}
           >
             <SwiperSlide>
               <div className="bg-hero-1 bg-cover h-full w-full bg-center flex flex-col justify-end gap-[40%] text-4xl">
@@ -79,7 +103,10 @@ const Home = () => {
                   <h2>& ACCESSORIES</h2>
                 </div>
                 <div className="flex flex-col items-center mb-10 text-white  ">
-                  <Link to='/category/all' className=" bg-[#4e5052] bg-opacity-90 w-fit text-lg px-6 py-1 opacity-75 rounded-2xl font-thin">
+                  <Link
+                    to="/category/all"
+                    className=" bg-[#4e5052] bg-opacity-90 w-fit text-lg px-6 py-1 opacity-75 rounded-2xl font-thin"
+                  >
                     EXPLORE COLLECTIONS
                   </Link>
                 </div>
@@ -213,12 +240,27 @@ const Home = () => {
           />
           Your browser does not support the video tag.
         </video>
-        <div className="flex flex-col items-center w-full mt-10 px-2">
-          <h1 className="px-2 text-center tracking-widest text-xl font-semibold">
+        <div
+          id="lazy-component-placeholder"
+          className="flex flex-col items-center w-full mt-10 px-2"
+        >
+          <motion.h1
+            animate={{ fontSize: 30, x: 40 }}
+            className="px-2 text-center tracking-widest text-xl font-semibold"
+          >
             JUST FOR YOU
-          </h1>
+          </motion.h1>
           {divider}
-          <Just4uSlide />
+           {isComponentInView && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <MotionJust4YouSlide
+            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: "-100vw" }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1.5 }}
+            viewport={{ once: true }}
+          />
+          </Suspense>)}
         </div>
         <div className="w-full flex flex-col mt-8">
           <h1 className="tracking-widest text-xl text-center">@TRENDING</h1>
@@ -248,45 +290,45 @@ const Home = () => {
             </Link>
           </div>
         </div>
-          <div className="w-full bg-[#f7f7f7] flex flex-col items-center mt-12 py-3 px-4">
-            <div className="font-bold text-2xl">
-              <h1>Open</h1>
-              <h1 className="-ml-2 -mt-1">Fashion</h1>
-            </div>
-            <p className="mb-2 text-center">
-              Making a luxurious lifestyle accessible for generous group of women
-              is our daily drive.
-            </p>
-            {divider}
-            <div className="flex flex-col mt-3 pb-8">
-              <div className="flex flex-row text-center justify-between gap-5">
-                <div className="flex flex-col">
-                  <FontAwesomeIcon icon={faTruckFast} className="text-3xl" />
-                  <span>Fast shipping Free on orders over $25</span>
-                </div>
-                <div className="flex flex-col">
-                  <FontAwesomeIcon icon={faSeedling} className="text-3xl" />
-                  <span className="text-center">
-                    Sustainable process from start to finish
-                  </span>
-                </div>
+        <div className="w-full bg-[#f7f7f7] flex flex-col items-center mt-12 py-3 px-4">
+          <div className="font-bold text-2xl">
+            <h1>Open</h1>
+            <h1 className="-ml-2 -mt-1">Fashion</h1>
+          </div>
+          <p className="mb-2 text-center">
+            Making a luxurious lifestyle accessible for generous group of women
+            is our daily drive.
+          </p>
+          {divider}
+          <div className="flex flex-col mt-3 pb-8">
+            <div className="flex flex-row text-center justify-between gap-5">
+              <div className="flex flex-col">
+                <FontAwesomeIcon icon={faTruckFast} className="text-3xl" />
+                <span>Fast shipping Free on orders over $25</span>
               </div>
-              <div className="flex flex-row mt-4 justify-between gap-5">
-                <div className="flex flex-col">
-                  <FontAwesomeIcon icon={faPencil} className="text-3xl" />
-                  <span className="text-center">
-                    Unique designs and high-quality materials.
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <FontAwesomeIcon icon={faBoltLightning} className="text-3xl" />
-                  <span className="text-center">
-                    Fast shipping. Free on orders over $25.
-                  </span>
-                </div>
+              <div className="flex flex-col">
+                <FontAwesomeIcon icon={faSeedling} className="text-3xl" />
+                <span className="text-center">
+                  Sustainable process from start to finish
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-row mt-4 justify-between gap-5">
+              <div className="flex flex-col">
+                <FontAwesomeIcon icon={faPencil} className="text-3xl" />
+                <span className="text-center">
+                  Unique designs and high-quality materials.
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <FontAwesomeIcon icon={faBoltLightning} className="text-3xl" />
+                <span className="text-center">
+                  Fast shipping. Free on orders over $25.
+                </span>
               </div>
             </div>
           </div>
+        </div>
         <div className="w-full flex flex-col items-center mt-10 ">
           <h1 className="uppercase text-xl font-semibold tracking-widest">
             Follow us
