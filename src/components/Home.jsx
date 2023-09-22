@@ -245,7 +245,7 @@ const Home = () => {
           className="flex flex-col items-center w-full mt-10 px-2"
         >
           <motion.h1
-            animate={{ fontSize: 30, x: 40 }}
+            animate={{ fontSize: 30, }}
             className="px-2 text-center tracking-widest text-xl font-semibold"
           >
             JUST FOR YOU
@@ -257,7 +257,7 @@ const Home = () => {
             animate={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: "-100vw" }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1.5 }}
+            transition={{ delay: 0.1, duration: 1.5 }}
             viewport={{ once: true }}
           />
           </Suspense>)}
