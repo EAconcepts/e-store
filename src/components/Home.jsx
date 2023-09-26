@@ -96,7 +96,7 @@ const Home = () => {
             pagination={{ clickable: true, dynamicBullets: true }}
           >
             <SwiperSlide>
-              <div className="bg-hero-1 bg-cover h-full w-full bg-center flex flex-col justify-end gap-[40%] text-4xl">
+              <div className="bg-hero-1 bg-cover md:bg-top h-full w-full bg-center flex flex-col justify-end gap-[40%] text-4xl">
                 <div className="w-full -mb-4 px-6 font-semibold italic flex flex-col -space-y-2">
                   <h2>LUXURY </h2>
                   <h2 className="ml-6">FASHION</h2>
@@ -113,7 +113,7 @@ const Home = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="bg-hero-2 bg-cover h-full w-full bg-center flex flex-col justify-end gap-[40%] text-4xl">
+              <div className="bg-hero-2 bg-cover h-full w-full md:bg-top bg-center flex flex-col justify-end gap-[40%] text-4xl">
                 <div className="w-full -mb-4 text-white px-6 font-semibold italic flex flex-col -space-y-2">
                   <h2>LUXURY </h2>
                   <h2 className="ml-6">FASHION</h2>
@@ -127,7 +127,7 @@ const Home = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="bg-[url('https://media.istockphoto.com/id/1370431940/photo/portrait-of-black-couple-with-shopping-bags-pointing-at-window.webp?b=1&s=170667a&w=0&k=20&c=XG0ZVgbYCvSLHfAWW-fgkOCrvNtP-stT52R4cFTtinw=')] bg-cover h-full w-full bg-center flex flex-col justify-end gap-[40%] text-4xl">
+              <div className="bg-[url('https://media.istockphoto.com/id/1370431940/photo/portrait-of-black-couple-with-shopping-bags-pointing-at-window.webp?b=1&s=170667a&w=0&k=20&c=XG0ZVgbYCvSLHfAWW-fgkOCrvNtP-stT52R4cFTtinw=')] bg-cover h-full w-full md:bg-top bg-center flex flex-col justify-end gap-[40%] text-4xl">
                 <div className="w-full -mb-4 px-6 font-semibold italic flex flex-col -space-y-2">
                   <h2>LUXURY </h2>
                   <h2 className="ml-6">FASHION</h2>
@@ -149,7 +149,7 @@ const Home = () => {
           New Arrival{" "}
         </h2>
         {divider}
-        <div className="flex flex-row w-full justify-around px-5 mt-4 text-slate-400 ">
+        <div className="flex flex-row w-full justify-around px-5 mt-4 text-slate-400 md:text-lg">
           <NavLink
             to="/"
             className={({ isActive, isPending }) =>
@@ -245,22 +245,23 @@ const Home = () => {
           className="flex flex-col items-center w-full mt-10 px-2"
         >
           <motion.h1
-            animate={{ fontSize: 30, }}
+            animate={{ fontSize: 30 }}
             className="px-2 text-center tracking-widest text-xl font-semibold"
           >
             JUST FOR YOU
           </motion.h1>
           {divider}
-           {isComponentInView && (
-        <Suspense fallback={<div>Loading...</div>}>
-          <MotionJust4YouSlide
-            animate={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: "-100vw" }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.1, duration: 1.5 }}
-            viewport={{ once: true }}
-          />
-          </Suspense>)}
+          {isComponentInView && (
+            <Suspense fallback={<div>Loading...</div>}>
+              <MotionJust4YouSlide
+                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: "-100vw" }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.1, duration: 1.5 }}
+                viewport={{ once: true }}
+              />
+            </Suspense>
+          )}
         </div>
         <div className="w-full flex flex-col mt-8">
           <h1 className="tracking-widest text-xl text-center">@TRENDING</h1>

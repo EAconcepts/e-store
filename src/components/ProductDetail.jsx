@@ -102,16 +102,7 @@ const ProductDetail = () => {
     </>
   );
   const navigateTo = useNavigate();
-  const handleAddToBasket = () => {
-    // let productData = {
-    //   id: product.id,
-    //   category: product.category,
-    //   name: product.title,
-    //   desc: product.desc,
-    //   price: product.price,
-    //   image: product.image,
-    //   qty: 1,
-    // };
+  const handleAddToBasket = () => {;
     let productDetails = product
     addToBasket(productDetails);
     notify("Added successfully");
@@ -119,6 +110,12 @@ const ProductDetail = () => {
       navigateTo("/cart");
     }, 2000);
   };
+  // let cardArray = allArray.filter()
+  // console.log(allArray.length)
+  // console.log(product)
+  let compare = [].concat(...allArray)
+  console.log(compare)
+  
   return (
     <div className="w-full mt-6 ">
       <ToastContainer />
@@ -139,7 +136,7 @@ const ProductDetail = () => {
                   <img
                     src={img}
                     alt={`${product.title} image`}
-                    className="w-full h-72 object-cover object-top"
+                    className="w-full h-72 md:h-[450px] object-cover object-top"
                   />
                 </a>
               </SwiperSlide>
@@ -272,6 +269,9 @@ const ProductDetail = () => {
       :
       <p className="font-medium  text-center my-10">Something Went wrong!!</p>
 }
+<div>
+  {/* <Card cardArray={cardArray}/> */}
+</div>
     </div>
   );
 };

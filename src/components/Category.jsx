@@ -89,7 +89,7 @@ let filteredd;
     <div className="flex flex-col w-full px-2 mt-6">
       <div className="w-full flex flex-row justify-between px-2">
         <h3 className="uppercase">
-          {filtered.length} {categ}
+          {filtered.length} {categ} 
         </h3>
         <div className="flex flex-row gap-x-3 items-center">
           <select

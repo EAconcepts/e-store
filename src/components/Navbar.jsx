@@ -22,10 +22,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Women");
   const [openSearch, setOpenSearch] = useState(false);
-const variants = {
-  open: { opacity: 1, x: 0 },
-  closed: { opacity: 0, x: "-100%" },
-};
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+  };
   const lists = [
     {
       category: "Women",
@@ -113,10 +113,15 @@ const variants = {
         </div>
       </div>
       {isOpen && (
-        <motion.nav 
-          animate={isOpen ? 'open' : 'closed'}
+        <motion.nav
+          animate={"open"}
+          initial={"closed"}
           variants={variants}
-        className="fixed w-full h-screen z-20 top-0 bottom-0 left-0 bg-white px-2">
+          type={"spring"}
+          // damping={10}
+          stiffness={10}
+          className="fixed w-full h-screen z-20 top-0 bottom-0 left-0 bg-white px-2"
+        >
           <FontAwesomeIcon
             icon={faClose}
             className="text-xl p-2 "
