@@ -4,9 +4,7 @@ import Dress from "./components/New Arrival/Dress";
 import Bag from "./components/New Arrival/Bag";
 import Tshirt from "./components/New Arrival/Tshirt";
 import Apparel from "./components/New Arrival/Apparel";
-import Home from "./components/Home";
 import Blog from "./components/Blog";
-import Navbar from "./components/Navbar";
 import BlogPost from "./components/BlogPost";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
@@ -14,13 +12,15 @@ import NoMatch404 from "./components/NoMatch404";
 import Cart from "./components/Cart";
 import Category from "./components/Category";
 import ProductDetail from "./components/ProductDetail";
+import Home from "./pages/Home/Home";
+import Navbar from "./layout/Navbar";
 
 
 function App() {
   return (
-    <div className="text-primary-black flex flex-col ">
+    <div className=" font-tenor-sans text-primary-black flex flex-col ">
       <BrowserRouter>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route exact path="/" element={<Home />}>
             <Route path="" element={<All />} />

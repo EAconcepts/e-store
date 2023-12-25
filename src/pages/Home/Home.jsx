@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../../layout/Navbar";
 import { NavLink, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 import { Outlet } from "react-router-dom";
-import Just4uSlide from "./Just4uSlide";
-import { divider } from "./Footer";
+import Just4uSlide from "../../components/Just4uSlide";
+import { divider } from "../../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBoltLightning,
@@ -15,25 +15,11 @@ import {
   faSeedling,
   faTruckFast,
 } from "@fortawesome/free-solid-svg-icons";
-import {motion} from 'framer-motion'
-import { lazy, useEffect, Suspense } from "react";
-const lazyJust4uSlide = lazy(()=>import('./Just4uSlide'))
+import Hero from "./components/Hero";
+import underline from "../../assets/underline.svg";
+import NewArrival from "./components/NewArrival";
 
 const Home = () => {
-  const [isComponentInView, setIsComponentInView] = useState(false);
-  const settings = {
-    // dots: true,
-    // infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    wipeToSlide: true,
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      );
-    },
-  };
   const instagram = [
     {
       username: "@mia",
@@ -60,141 +46,13 @@ const Home = () => {
         "https://i.pinimg.com/originals/5e/b6/6c/5eb66c4e498377df2264caf93d923b77.jpg",
     },
   ];
-  const MotionJust4YouSlide = motion(Just4uSlide)
-  
-  useEffect(() => {
-    // Create an Intersection Observer to detect when the component is in the viewport
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsComponentInView(true);
-          observer.disconnect(); // Stop observing once the component is in view
-        }
-      });
-    });
-    const targetElement = document.getElementById("lazy-component-placeholder");
-    if (targetElement) {
-      observer.observe(targetElement);
-    }
-    return () => {
-      observer.disconnect(); // Cleanup when the component unmounts
-    };
-  }, []);
 
   return (
-    <div>
+    <div className="">
       {/* {Hero slide} */}
-      <div className="h-screen w-full">
-        <section className="h-[95%] w-full flex flex-col">
-          <Swiper
-            className=" w-full h-full"
-            spaceBetween={50}
-            slidesPerView={1}
-            // onSlideChange={() => console.log("slide change")}
-            // onSwiper={(swiper) => console.log(swiper)}
-            modules={[Pagination]}
-            pagination={{ clickable: true, dynamicBullets: true }}
-          >
-            <SwiperSlide>
-              <div className="bg-hero-1 bg-cover md:bg-top h-full w-full bg-center flex flex-col justify-end gap-[40%] text-4xl">
-                <div className="w-full -mb-4 px-6 font-semibold italic flex flex-col -space-y-2">
-                  <h2>LUXURY </h2>
-                  <h2 className="ml-6">FASHION</h2>
-                  <h2>& ACCESSORIES</h2>
-                </div>
-                <div className="flex flex-col items-center mb-10 text-white  ">
-                  <Link
-                    to="/category/all"
-                    className=" bg-[#4e5052] bg-opacity-90 w-fit text-lg px-6 py-1 opacity-75 rounded-2xl font-thin"
-                  >
-                    EXPLORE COLLECTIONS
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="bg-hero-2 bg-cover h-full w-full md:bg-top bg-center flex flex-col justify-end gap-[40%] text-4xl">
-                <div className="w-full -mb-4 text-white px-6 font-semibold italic flex flex-col -space-y-2">
-                  <h2>LUXURY </h2>
-                  <h2 className="ml-6">FASHION</h2>
-                  <h2>& ACCESSORIES</h2>
-                </div>
-                <div className="flex flex-col items-center mb-10 text-white  ">
-                  <button className=" bg-[#4e5052] bg-opacity-90 w-fit text-lg px-6 py-1 opacity-75 rounded-2xl font-thin">
-                    EXPLORE COLLECTIONS
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="bg-[url('https://media.istockphoto.com/id/1370431940/photo/portrait-of-black-couple-with-shopping-bags-pointing-at-window.webp?b=1&s=170667a&w=0&k=20&c=XG0ZVgbYCvSLHfAWW-fgkOCrvNtP-stT52R4cFTtinw=')] bg-cover h-full w-full md:bg-top bg-center flex flex-col justify-end gap-[40%] text-4xl">
-                <div className="w-full -mb-4 px-6 font-semibold italic flex flex-col -space-y-2">
-                  <h2>LUXURY </h2>
-                  <h2 className="ml-6">FASHION</h2>
-                  <h2>& ACCESSORIES</h2>
-                </div>
-                <div className="flex flex-col items-center mb-10 text-white  ">
-                  <button className=" bg-[#4e5052] bg-opacity-90 w-fit text-lg px-6 py-1 opacity-75 rounded-2xl font-thin">
-                    EXPLORE COLLECTIONS
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </section>
-      </div>
+      <Hero />
       {/* {New Arrival} */}
-      <section className=" flex flex-col px-1 items-center  mb-12">
-        <h2 className=" uppercase text-center font-medium text-2xl tracking-wider ">
-          New Arrival{" "}
-        </h2>
-        {divider}
-        <div className="flex flex-row w-full justify-around px-5 mt-4 text-slate-400 md:text-lg">
-          <NavLink
-            to="/"
-            className={({ isActive, isPending }) =>
-              isPending ? "" : isActive ? "text-slate-800 font-medium" : ""
-            }
-          >
-            All
-          </NavLink>
-          <NavLink
-            to="/apparel"
-            className={({ isActive, isPending }) =>
-              isPending ? "" : isActive ? "text-slate-800 font-medium" : ""
-            }
-          >
-            Apparel
-          </NavLink>
-          <NavLink
-            to="/dress"
-            className={({ isActive, isPending }) =>
-              isPending ? "" : isActive ? "text-slate-800 font-medium" : ""
-            }
-          >
-            Dress
-          </NavLink>
-          <NavLink
-            to="/tshirt"
-            className={({ isActive, isPending }) =>
-              isPending ? "" : isActive ? "text-slate-800 font-medium" : ""
-            }
-          >
-            Tshirt
-          </NavLink>
-          <NavLink
-            to="/bag"
-            className={({ isActive, isPending }) =>
-              isPending ? "" : isActive ? "text-slate-800 font-medium" : ""
-            }
-          >
-            Bag
-          </NavLink>
-        </div>
-        <div className="w-full mt-4">
-          <Outlet />
-        </div>
-      </section>
+      <NewArrival/>
       {divider}
       {/* {Brands} */}
       <section className="my-10">
@@ -209,7 +67,8 @@ const Home = () => {
           <h2 className="uppercase">Tiffany & Co.</h2>
         </div>
       </section>
-      {divider}
+      {/* {divider} */}
+      <img src={underline} alt="divider" className=" m-auto"/>
       <section className="w-full flex flex-col items-center">
         <h2 className="font-medium text-xl tracking-widest text-center mt-16">
           {" "}
@@ -218,7 +77,7 @@ const Home = () => {
         <img
           src="https://guardian.ng/wp-content/uploads/2018/03/Ere-Dappa-with-some-of-her-models.-Photo_-Vogue.jpg"
           alt="collection-image"
-          className="w-full h-34 mt-3"
+          className="w-full h-34 mt-3 lg:px-[32px]"
         />
         <Link to="#" className="w-full flex flex-col items-center">
           <img
@@ -228,9 +87,9 @@ const Home = () => {
           />
         </Link>
         <video
-          className="mt-8 w-full"
+          className="mt-8 w-full lg:px-[32px] lg:h-[500px] lg:w-full"
           width="320"
-          height="240"
+          height="240" 
           controls
           autoPlay
         >
@@ -244,24 +103,14 @@ const Home = () => {
           id="lazy-component-placeholder"
           className="flex flex-col items-center w-full mt-10 px-2"
         >
-          <motion.h1
+          <h1
             animate={{ fontSize: 30 }}
             className="px-2 text-center tracking-widest text-xl font-semibold"
           >
             JUST FOR YOU
-          </motion.h1>
+          </h1>
           {divider}
-          {isComponentInView && (
-            <Suspense fallback={<div>Loading...</div>}>
-              <MotionJust4YouSlide
-                animate={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: "-100vw" }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.1, duration: 1.5 }}
-                viewport={{ once: true }}
-              />
-            </Suspense>
-          )}
+          <Just4uSlide />
         </div>
         <div className="w-full flex flex-col mt-8">
           <h1 className="tracking-widest text-xl text-center">@TRENDING</h1>
@@ -330,24 +179,25 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {/* Follow us */}
         <div className="w-full flex flex-col items-center mt-10 ">
           <h1 className="uppercase text-xl font-semibold tracking-widest">
             Follow us
           </h1>
           <i className="fab fa-instagram text-3xl mt-2"></i>
-          <div className="w-full grid grid-cols-2 border place-content-center px-2 gap-3 ">
+          <div className="w-full lg:place-items-center grid grid-cols-2 place-content-center px-2 gap-3 lg:gap-12">
             {instagram &&
               instagram.map((insta, index) => (
                 <a
                   key={index}
                   href={insta.url}
                   target="_blank"
-                  className="relative w-full h-56 flex flex-col justify-end mt-2"
+                  className="relative w-full lg:w-[300px] h-56 flex flex-col justify-end mt-2"
                 >
                   <img
                     src={insta.image}
                     alt={`${insta.image} image`}
-                    className="absolute w-ful h-full object-cover grayscale -z-10"
+                    className="absolute lg:w-full h-full object-cover grayscale -z-10"
                   />
                   <p className="py-2 px-2 bg-gradient-to-t from-slate-900 text-white">
                     {insta.username}

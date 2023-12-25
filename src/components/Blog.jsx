@@ -1,7 +1,7 @@
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";

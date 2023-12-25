@@ -13,6 +13,9 @@ export default {
         'primary-black': '#4c4c4c',
         'price-brown' : '#a8715c',
       },
+      fontFamily:{
+        'tenor-sans': "'Tenor Sans', sans-serif"
+      }
     },
   },
   plugins: [],

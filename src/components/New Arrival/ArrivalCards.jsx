@@ -9,15 +9,15 @@ const ArrivalCards = ({ arrayList }) => {
   const {setPreview, preview} = useBlogStore()
   const navigateTo = useNavigate()
   return (
-    <div className="w-full p-2 ">
+    <div className="w-full p-2">
       <div className="w-full grid grid-cols-2 md:grid-cols-4  place-items-center gap-y-3 md:gap-y-10">
         {arrayList &&
           arrayList.map((obj) => (
-            <div className="text-center text-sm" key={obj.id}>
+            <div className="flex flex-col items-center text-center text-sm cursor-pointer hover:scale-105  transition duration-500 ease-in-out" key={obj.id}>
               <img
                 src={obj.image}
                 alt={obj.title}
-                className="h-36 md:h-64 w-36 md:w-64 object-cover md:object-top"
+                className="h-36 md:h-64 w-36 md:w-64 object-cover  md:object-top"
                 onClick={() => {
                   setPreview(arrayList.find((item) => obj.id === item.id));
                   navigateTo(`/category/${obj.category}/${obj.id}`);

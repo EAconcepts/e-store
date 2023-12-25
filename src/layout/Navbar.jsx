@@ -14,8 +14,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import MenuList from "./MenuList";
-import Search from "./Search";
+import MenuList from "../components/MenuList";
+import Search from "../components/Search";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
@@ -89,11 +89,24 @@ const Navbar = () => {
   return (
     <div className="relative w-full">
       <div className="w-full flex flex-row justify-between items-center p-1 px-4">
-        <FontAwesomeIcon
+        {/* <FontAwesomeIcon
           icon={faBars}
           className="text-2xl "
           onClick={() => setIsOpen(!isOpen)}
-        />
+        /> */}
+        <svg
+        onClick={() => setIsOpen(!isOpen)}
+          width="24"
+          height="25"
+          viewBox="0 0 24 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0.306763 12.7537H15.9824" stroke="#14142B" />
+          <path d="M0.306641 5.75366H23.6931" stroke="#14142B" />
+          <path d="M0.306641 19.7537H23.6931" stroke="#14142B" />
+        </svg>
+
         <Link
           to="/"
           className="flex flex-col items-center -space-y-3 text-2xl font-medium"
