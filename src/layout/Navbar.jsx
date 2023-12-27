@@ -89,12 +89,8 @@ const Navbar = () => {
   return (
     <div className="relative w-full">
       <div className="w-full flex flex-row justify-between items-center p-1 px-4">
-        {/* <FontAwesomeIcon
-          icon={faBars}
-          className="text-2xl "
-          onClick={() => setIsOpen(!isOpen)}
-        /> */}
         <svg
+        className="lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
           width="24"
           height="25"
@@ -109,18 +105,22 @@ const Navbar = () => {
 
         <Link
           to="/"
-          className="flex flex-col items-center -space-y-3 text-2xl font-medium"
+          className="flex flex-col items-center -space-y-3 text-2xl font-medium lg:font-semibold"
         >
           <h1 className="">Open </h1>
           <h1>Fashion</h1>
         </Link>
-        <div className="flex flex-row items-center space-x-4 text-2xl ">
+        <div className="flex flex-row items-center space-x-4 text-2xl lg:text-lg ">
+          <NavLink to='/category/all' className='hover:opacity-70 hidden lg:block'>Categories</NavLink>
+          <NavLink to='/blog' className='hover:opacity-70 hidden lg:block'>Blogs</NavLink>
+          <NavLink to='/contact' className='hover:opacity-70 hidden lg:block'>Contact</NavLink>
+          <NavLink to='/cart' className='hover:opacity-70 hidden lg:block'>Cart</NavLink>
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             className=""
             onClick={() => setOpenSearch(true)}
           />
-          <NavLink to="/cart">
+          <NavLink to="/cart" className='lg:hidden'>
             <FontAwesomeIcon icon={faShoppingBag} className="" />
           </NavLink>
         </div>

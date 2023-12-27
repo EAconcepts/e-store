@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import { Outlet } from "react-router-dom";
 import Just4uSlide from "../../components/Just4uSlide";
-import { divider } from "../../components/Footer";
+import { divider } from "../../layout/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBoltLightning,
@@ -52,7 +52,7 @@ const Home = () => {
       {/* {Hero slide} */}
       <Hero />
       {/* {New Arrival} */}
-      <NewArrival/>
+      <NewArrival />
       {divider}
       {/* {Brands} */}
       <section className="my-10">
@@ -68,7 +68,7 @@ const Home = () => {
         </div>
       </section>
       {/* {divider} */}
-      <img src={underline} alt="divider" className=" m-auto"/>
+      <img src={underline} alt="divider" className=" m-auto" />
       <section className="w-full flex flex-col items-center">
         <h2 className="font-medium text-xl tracking-widest text-center mt-16">
           {" "}
@@ -89,7 +89,7 @@ const Home = () => {
         <video
           className="mt-8 w-full lg:px-[32px] lg:h-[500px] lg:w-full"
           width="320"
-          height="240" 
+          height="240"
           controls
           autoPlay
         >

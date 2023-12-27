@@ -8,22 +8,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-import useBlogStore from "./zustand/Store";
+import useBlogStore from "../../components/zustand/Store";
 
 const Cart = () => {
-  const {cart, setPreview, preview} = useBlogStore()
+  const { cart, setPreview, preview } = useBlogStore();
   const [count, setCount] = useState(1);
- let reversedCart =[]
-  for(let i = cart.length -1 ; i>=0; i--){
-    const valueAtIndex = cart[i]
-    reversedCart.push(valueAtIndex)
+  let reversedCart = [];
+  for (let i = cart.length - 1; i >= 0; i--) {
+    const valueAtIndex = cart[i];
+    reversedCart.push(valueAtIndex);
   }
- 
+
   const navigateTo = useNavigate();
   const subTotal = reversedCart.reduce((acc, item) => {
     return (parseInt(acc) + parseInt(item.price)) * item.qty;
   }, 0);
-console.log(cart)
+  console.log(cart);
   return (
     <div className="w-full flex flex-col">
       {cart.length > 0 ? (
@@ -36,12 +36,11 @@ console.log(cart)
               <div key={index} className="w-full flex flex-col px-4 ">
                 <div key={index} className="w-full flex flex-row gap-x-5">
                   <img
-                    onClick={() =>{
-                      setPreview(cart.find((prev) => prev.id === item.id))
-                      console.log(preview)
-                        navigateTo(`/category/${item.category}/${item.id}`)
-                    }
-                    }
+                    onClick={() => {
+                      setPreview(cart.find((prev) => prev.id === item.id));
+                      console.log(preview);
+                      navigateTo(`/category/${item.category}/${item.id}`);
+                    }}
                     src={item.image[0]}
                     alt={` ${item.name} image`}
                     className=" w-32 h-40 object-cover border border-[#a8715c] bg-[#e7dcd7] p-1"

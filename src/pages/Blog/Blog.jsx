@@ -5,12 +5,14 @@ import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import useBlogStore from "./zustand/Store";
+import useBlogStore from "../../components/zustand/Store";
 const Blog = () => {
-  const {blogPosts} = useBlogStore()
+  const { blogPosts } = useBlogStore();
   return (
     <div className="w-full flex flex-col">
-      <h1 className="tracking-wider text-xl text-center font-semibold ">BLOG</h1>
+      <h1 className="tracking-wider text-xl text-center font-semibold ">
+        BLOG
+      </h1>
       <div className="flex flex-row justify-around mt-6">
         <span className="bg-slate-50">Fashion</span>
         <span className="bg-slate-50">Promo</span>
@@ -27,11 +29,11 @@ const Blog = () => {
             <div
               className={`relative h-64 w-full text-slate-100 flex flex-col justify-between`}
             >
-                <img
-                  src={article.image}
-                  alt="image"
-                  className="absolute w-full h-full -z-10 object-cover object-top"
-                />
+              <img
+                src={article.image}
+                alt="image"
+                className="absolute w-full h-full -z-10 object-cover object-top"
+              />
               <div className="flex justify-end p-3 text-lg">
                 <FontAwesomeIcon icon={faBookmark} />
               </div>
